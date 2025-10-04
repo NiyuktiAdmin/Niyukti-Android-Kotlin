@@ -175,37 +175,37 @@ class TestMainActivity : AppCompatActivity(), QuestionAdapter.OnOptionSelectedLi
         allQuestionList = mutableListOf()
         subjectWiseQuestions = LinkedHashMap() // Use LinkedHashMap to preserve subject order
 
-        // Sample questions for subject 'a'
-        allQuestionList.add(QuestionModel("#1: What is the capital of France?",
-            arrayOf("Berlin", "Madrid", "Paris", "Rome"), 2, "a"))
-        allQuestionList.add(QuestionModel("#2: Which is the largest ocean on Earth?",
-            arrayOf("Atlantic", "Indian", "Arctic", "Pacific"), 3, "a"))
-        allQuestionList.add(QuestionModel("#3: What is 2 + 2?",
-            arrayOf("3", "4", "5", "6"), 1, "a"))
+        // Mathematics Questions
+        allQuestionList.add(QuestionModel("Q1: What is the square root of 64?",
+            arrayOf("6", "7", "8", "9"), 2, "Mathematics"))
+        allQuestionList.add(QuestionModel("Q2: What is 15 × 3?",
+            arrayOf("30", "45", "60", "35"), 1, "Mathematics"))
+        allQuestionList.add(QuestionModel("Q3: What is the value of π (pi) approximately?",
+            arrayOf("2.12", "3.14", "3.41", "4.13"), 1, "Mathematics"))
 
-        // Sample questions for subject 'b'
-        allQuestionList.add(QuestionModel("b1: Who painted the Mona Lisa?",
-            arrayOf("Van Gogh", "Picasso", "Da Vinci", "Monet"), 2, "b"))
-        allQuestionList.add(QuestionModel("b2: What is the chemical symbol for water?",
-            arrayOf("O2", "H2O", "CO2", "NACL"), 1, "b"))
-        allQuestionList.add(QuestionModel("b3: What is the largest mammal?",
-            arrayOf("Elephant", "Blue Whale", "Giraffe", "Polar Bear"), 1, "b"))
+// Science Questions
+        allQuestionList.add(QuestionModel("Q4: What planet is known as the Red Planet?",
+            arrayOf("Venus", "Mars", "Jupiter", "Mercury"), 1, "Science"))
+        allQuestionList.add(QuestionModel("Q5: What is the chemical symbol for water?",
+            arrayOf("H2O", "CO2", "O2", "NaCl"), 0, "Science"))
+        allQuestionList.add(QuestionModel("Q6: What gas do plants absorb during photosynthesis?",
+            arrayOf("Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"), 1, "Science"))
 
-        // Sample questions for subject 'c'
-        allQuestionList.add(QuestionModel("c1: What is the capital of Japan?",
-            arrayOf("Seoul", "Beijing", "Tokyo", "Bangkok"), 2, "c"))
-        allQuestionList.add(QuestionModel("c2: Who wrote 'Romeo and Juliet'?",
-            arrayOf("Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain"), 1, "c"))
-        allQuestionList.add(QuestionModel("c3: What is the square root of 81?",
-            arrayOf("7", "8", "9", "10"), 2, "c"))
+// History Questions
+        allQuestionList.add(QuestionModel("Q7: Who was the first President of the United States?",
+            arrayOf("Abraham Lincoln", "George Washington", "John Adams", "Thomas Jefferson"), 1, "History"))
+        allQuestionList.add(QuestionModel("Q8: In which year did World War II end?",
+            arrayOf("1940", "1942", "1945", "1948"), 2, "History"))
+        allQuestionList.add(QuestionModel("Q9: Who discovered America?",
+            arrayOf("Christopher Columbus", "Vasco da Gama", "Marco Polo", "James Cook"), 0, "History"))
 
-        // Sample questions for subject 'd'
-        allQuestionList.add(QuestionModel("d1: What is the main component of air?",
-            arrayOf("Oxygen", "Carbon Dioxide", "Nitrogen", "Argon"), 2, "d"))
-        allQuestionList.add(QuestionModel("d2: Which planet is known as the 'Red Planet'?",
-            arrayOf("Earth", "Mars", "Jupiter", "Venus"), 1, "d"))
-        allQuestionList.add(QuestionModel("d3: What is the fastest land animal?",
-            arrayOf("Lion", "Cheetah", "Gazelle", "Tiger"), 1, "d"))
+// Geography Questions
+        allQuestionList.add(QuestionModel("Q10: What is the capital of Japan?",
+            arrayOf("Beijing", "Seoul", "Tokyo", "Bangkok"), 2, "Geography"))
+        allQuestionList.add(QuestionModel("Q11: Which is the largest ocean on Earth?",
+            arrayOf("Atlantic", "Indian", "Arctic", "Pacific"), 3, "Geography"))
+        allQuestionList.add(QuestionModel("Q12: Which country has the longest coastline?",
+            arrayOf("Australia", "Russia", "Canada", "USA"), 2, "Geography"))
 
         // Populate subjectWiseQuestions map
         for (question in allQuestionList) {

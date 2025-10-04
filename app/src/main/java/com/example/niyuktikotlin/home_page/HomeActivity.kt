@@ -18,9 +18,20 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
 import com.example.niyuktikotlin.mock_test_list.MockTestListActivity
 import com.example.niyuktikotlin.R
+import com.example.niyuktikotlin.all_courses.AllCoursesListActivity
 import com.example.niyuktikotlin.menu_fragment.FragmentMainMenu
 import com.example.niyuktikotlin.referals.ReferRewardsActivity
+import com.example.niyuktikotlin.subject_wise_course.SubjectWiseCourseListActivity
+import com.example.niyuktikotlin.util.CourseBuyAdapter
+import com.example.niyuktikotlin.util.CourseModel
 import com.example.niyuktikotlin.wallet.WalletActivity
+import io.appwrite.Client
+import io.appwrite.exceptions.AppwriteException
+import io.appwrite.services.Account
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class HomeActivity : AppCompatActivity() {
 
@@ -45,6 +56,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var navbarHome: LinearLayout
     private lateinit var navbarReferEarn: LinearLayout
     private lateinit var navbarWallet: LinearLayout
+    private lateinit var navbarMyCourses: LinearLayout
 
     private lateinit var layoutManager: LinearLayoutManager
     private val handler = Handler()
@@ -52,7 +64,11 @@ class HomeActivity : AppCompatActivity() {
     private val AUTO_SCROLL_DELAY: Long = 3000
     private lateinit var offerAdapter: HomePageOfferAdapter
 
-    private val myRefCode = "QWERTY"
+    private val myRefCode = "Niyukti1"
+
+    private lateinit var client: Client
+    private lateinit var account: Account
+    private val scope = CoroutineScope(Dispatchers.IO)
 
     private val autoScrollRunnable = object : Runnable {
         override fun run() {
@@ -70,15 +86,54 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
+        client = Client(this, "https://fra.cloud.appwrite.io/v1")
+            .setProject(getString(R.string.APPWRITE_PROJECT_ID))
+        account = Account(client)
+
         initialiseVariables()
 
-        // --------- RECYCLER VIEWS SETUP ------------
-        setOfferRv()
-        setConstableRv()
-        setRecentlyAddedRv()
-        setPackagesRv()
+        val listOfItems = listOf(
+            CourseModel(
+                title = "Current Affairs 2025",
+                actualPrice = 799,
+                discountedPrice = 499,
+                discountPercent = 38,
+                imageResId = R.drawable.course4,
+                category = "General Knowledge"
+            ),
+            CourseModel(
+                title = "Constable Foundation Course",
+                actualPrice = 1499,
+                discountedPrice = 999,
+                discountPercent = 33,
+                imageResId = R.drawable.offer1,
+                category = "Police Exam"
+            ),
+            CourseModel(
+                title = "Reasoning Mastery",
+                actualPrice = 999,
+                discountedPrice = 699,
+                discountPercent = 30,
+                imageResId = R.drawable.offer3,
+                category = "Aptitude"
+            ),
+            CourseModel(
+                title = "Maths Booster",
+                actualPrice = 1099,
+                discountedPrice = 799,
+                discountPercent = 27,
+                imageResId = R.drawable.sample_home_offer,
+                category = "Quantitative Aptitude"
+            )
+        )
 
-        welcomeName.text = "Hi, Tarush Gupta"
+        setOfferRv()
+        setConstableRv(listOfItems)
+        setRecentlyAddedRv(listOfItems)
+        setPackagesRv(listOfItems)
+
+
+        fetchUserName()
         referralCode.text = myRefCode
 
         setCardButtons()
@@ -94,8 +149,8 @@ class HomeActivity : AppCompatActivity() {
 
     private fun setCardButtons() {
         mockTestCard.setOnClickListener { goTo(MockTestListActivity::class.java) }
-        allCoursesCard.setOnClickListener { goTo(MockTestListActivity::class.java) }
-        subjectCourseCard.setOnClickListener { goTo(MockTestListActivity::class.java) }
+        allCoursesCard.setOnClickListener { goTo(AllCoursesListActivity::class.java) }
+        subjectCourseCard.setOnClickListener { goTo(SubjectWiseCourseListActivity::class.java) }
     }
 
     private fun goTo(activityClass: Class<*>) {
@@ -103,28 +158,28 @@ class HomeActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    private fun setRecentlyAddedRv() {
+    private fun setRecentlyAddedRv(listOfItems : List<CourseModel>) {
         val recentlyAddedLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recentlyAddedRv.layoutManager = recentlyAddedLayoutManager
-        val recentlyAddedAdapter = HomePageConstableAdapter()
+        val recentlyAddedAdapter = CourseBuyAdapter(listOfItems)
         recentlyAddedRv.adapter = recentlyAddedAdapter
         val snapHelper: SnapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(recentlyAddedRv)
     }
 
-    private fun setConstableRv() {
+    private fun setConstableRv(listOfItems : List<CourseModel>) {
         val constableLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         constableRv.layoutManager = constableLayoutManager
-        val constableAdapter = HomePageConstableAdapter()
+        val constableAdapter = CourseBuyAdapter(listOfItems)
         constableRv.adapter = constableAdapter
         val snapHelper: SnapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(constableRv)
     }
 
-    private fun setPackagesRv() {
+    private fun setPackagesRv(listOfItems : List<CourseModel>) {
         val constableLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         packagesRv.layoutManager = constableLayoutManager
-        val packagesAdapter = HomePageConstableAdapter()
+        val packagesAdapter = CourseBuyAdapter(listOfItems)
         packagesRv.adapter = packagesAdapter
         val snapHelper: SnapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(packagesRv)
@@ -143,7 +198,14 @@ class HomeActivity : AppCompatActivity() {
     private fun setOfferRv() {
         layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         offerRv.layoutManager = layoutManager
-        offerAdapter = HomePageOfferAdapter()
+        offerAdapter = HomePageOfferAdapter(
+            listOf(
+                R.drawable.offer1,
+                R.drawable.sample_home_offer,
+                R.drawable.offer2,
+                R.drawable.course4
+            )
+        )
         offerRv.adapter = offerAdapter
 
         val snapHelper: SnapHelper = LinearSnapHelper()
@@ -183,12 +245,14 @@ class HomeActivity : AppCompatActivity() {
 
         navbarReferEarn = findViewById(R.id.home_navbar_refer_earn_btn)
         navbarWallet = findViewById(R.id.home_navbar_wallet_btn)
+        navbarMyCourses = findViewById(R.id.home_navbar_mycourses_btn)
 
         navigationMenuBtn = findViewById(R.id.home_activity_menu_btn)
     }
 
     private fun setNavbarButtons() {
         setNavigationMenuBtn()
+        navbarMyCourses.setOnClickListener { goTo(AllCoursesListActivity::class.java) }
         navbarWallet.setOnClickListener { goTo(WalletActivity::class.java) }
         navbarReferEarn.setOnClickListener { goTo(ReferRewardsActivity::class.java) }
     }
@@ -197,6 +261,31 @@ class HomeActivity : AppCompatActivity() {
         navigationMenuBtn.setOnClickListener {
             val mainMenuFragment = FragmentMainMenu()
             mainMenuFragment.show(supportFragmentManager, FragmentMainMenu.TAG)
+        }
+    }
+
+    private fun fetchUserName() {
+        scope.launch {
+            try {
+                val user = account.get()
+                val userName = if (user.name.isNullOrEmpty() || user.name == user.id) {
+                    // Todo : Fallback if the name is not set (e.g., if only phone was used)
+                    "User"
+                } else {
+                    user.name
+                }
+
+                withContext(Dispatchers.Main) {
+                    welcomeName.text = "Hi, $userName"
+                }
+            } catch (e: AppwriteException) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(this@HomeActivity, "Could not load profile. Please relog.", Toast.LENGTH_LONG).show()
+                    welcomeName.text = "Hi, Guest"
+                }
+            } catch (e: Exception) {
+                // do nth.
+            }
         }
     }
 }

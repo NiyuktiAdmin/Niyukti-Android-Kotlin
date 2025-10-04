@@ -28,6 +28,7 @@ class OtpVerifyActivity : AppCompatActivity() {
     private lateinit var account: Account
     private var phone: String? = null
     private var tokenId: String? = null
+    private lateinit var backBtn: TextView
 
     private val scope = CoroutineScope(Dispatchers.IO)
 
@@ -53,6 +54,7 @@ class OtpVerifyActivity : AppCompatActivity() {
         verifyButton = findViewById(R.id.verify_otp_btn)
         contactTextView = findViewById(R.id.contact_text_view)
         otpEditText = findViewById(R.id.otp_verify_edit_text)
+        backBtn = findViewById(R.id.tvReEnterPhone);
 
         // Display the contact number
         if (!phone.isNullOrEmpty()) {
@@ -66,6 +68,9 @@ class OtpVerifyActivity : AppCompatActivity() {
 
         verifyButton.setOnClickListener {
             verifyOtpAndLogin()
+        }
+        backBtn.setOnClickListener {
+            finish()
         }
     }
 

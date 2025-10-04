@@ -13,10 +13,10 @@ class CourseResourceAdapter : RecyclerView.Adapter<CourseResourceAdapter.ViewHol
             .inflate(R.layout.card_component_subject_resource, parent, false)
         return ViewHolder(view)
     }
-//hello
+
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {}
     override fun getItemCount(): Int {
-        return 3
+        return 2
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)

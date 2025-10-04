@@ -24,7 +24,7 @@ class CoursesTestsAdapter : RecyclerView.Adapter<CoursesTestsAdapter.ViewHolder>
     }
 
     override fun getItemCount(): Int {
-        return 3
+        return 1
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

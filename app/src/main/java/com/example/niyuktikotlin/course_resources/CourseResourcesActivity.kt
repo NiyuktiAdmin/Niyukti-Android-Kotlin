@@ -1,6 +1,7 @@
 package com.example.niyuktikotlin.course_resources
 
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,6 +13,7 @@ class CourseResourcesActivity : AppCompatActivity() {
     private lateinit var testsRv: RecyclerView
     private lateinit var resourceAdapter: CourseResourceAdapter
     private lateinit var testsAdapter: CoursesTestsAdapter
+    private lateinit var backBtn: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,7 +21,11 @@ class CourseResourcesActivity : AppCompatActivity() {
 
         resourcesRv = findViewById(R.id.course_resource_rv)
         testsRv = findViewById(R.id.course_resources_test_rv)
+        backBtn = findViewById(R.id.course_resources_test_back_btn)
 
+        backBtn.setOnClickListener {
+            finish()
+        }
         setRecyclerViews()
     }
 

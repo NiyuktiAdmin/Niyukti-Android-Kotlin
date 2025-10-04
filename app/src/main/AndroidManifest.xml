@@ -14,18 +14,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NiyuktiKotlin"
         tools:targetApi="31">
-
+        <activity
+            android:name=".subject_wise_course.SubjectWiseCourseListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".all_courses.AllCoursesListActivity"
+            android:exported="false" />
         <activity
             android:name="io.appwrite.views.CallbackActivity"
             android:exported="true">
             <intent-filter android:label="android_web_auth">
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data android:scheme="appwrite-callback-68511ac1000c3bac6acc" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".referals.ReferRewardsActivity"
             android:exported="false" />
@@ -77,13 +83,10 @@
         <activity
             android:name=".course_resources.CourseResourcesActivity"
             android:exported="false" />
-
-
         <activity
             android:name=".login.LoginActivity"
             android:exported="true"
             android:launchMode="singleTop">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

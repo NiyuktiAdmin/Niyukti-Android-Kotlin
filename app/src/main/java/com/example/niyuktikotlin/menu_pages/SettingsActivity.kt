@@ -2,6 +2,7 @@ package com.example.niyuktikotlin.menu_pages
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
@@ -20,6 +21,7 @@ class SettingsActivity : AppCompatActivity() {
     private lateinit var client: Client
     private lateinit var account: Account
     private lateinit var logoutCard: CardView
+    private lateinit var backBtn: ImageView
 
     private val scope = CoroutineScope(Dispatchers.IO)
 
@@ -28,6 +30,7 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_settings)
 
         logoutCard = findViewById(R.id.logout_card)
+        backBtn = findViewById(R.id.about_us_back)
 
         client = Client(this, "https://fra.cloud.appwrite.io/v1")
             .setProject(getString(R.string.APPWRITE_PROJECT_ID))
@@ -36,6 +39,10 @@ class SettingsActivity : AppCompatActivity() {
 
         logoutCard.setOnClickListener {
             logout()
+        }
+
+        backBtn.setOnClickListener {
+            finish()
         }
     }
 

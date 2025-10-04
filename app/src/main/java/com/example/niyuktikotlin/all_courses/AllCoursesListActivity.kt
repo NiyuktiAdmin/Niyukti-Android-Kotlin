@@ -1,15 +1,17 @@
-package com.example.niyuktikotlin.mock_test_list
+package com.example.niyuktikotlin.all_courses
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.niyuktikotlin.R
-import com.example.niyuktikotlin.util.CourseBuyTagAdapter
+
 import com.example.niyuktikotlin.util.CourseBuyAdapter
+import com.example.niyuktikotlin.util.CourseBuyTagAdapter
 import com.example.niyuktikotlin.util.CourseModel
 
-class MockTestListActivity : AppCompatActivity(), CourseBuyTagAdapter.OnTagSelectedListener {
+
+open class AllCoursesListActivity : AppCompatActivity(), CourseBuyTagAdapter.OnTagSelectedListener { // IMPLEMENT Listener
 
     private lateinit var tagsRv: RecyclerView
     private lateinit var itemsRv: RecyclerView
@@ -18,10 +20,10 @@ class MockTestListActivity : AppCompatActivity(), CourseBuyTagAdapter.OnTagSelec
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_mock_test_list)
+        setContentView(R.layout.activity_all_courses_list)
 
-        itemsRv = findViewById(R.id.mock_test_list_activity_items_rv)
-        tagsRv = findViewById(R.id.mock_test_list_activity_tags_rv)
+        itemsRv = findViewById(R.id.all_courses_list_activity_items_rv)
+        tagsRv = findViewById(R.id.all_courses_list_activity_tags_rv)
 
         loadCourseData()
         setTagsRv()

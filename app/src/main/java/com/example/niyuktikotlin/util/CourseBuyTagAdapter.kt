@@ -1,4 +1,4 @@
-package com.example.niyuktikotlin.mock_test_list
+package com.example.niyuktikotlin.util
 
 import android.annotation.SuppressLint
 import android.graphics.Color
@@ -10,9 +10,14 @@ import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.example.niyuktikotlin.R
 
-class MockTestListTagsAdapter(
-    private val tags: List<String>
-) : RecyclerView.Adapter<MockTestListTagsAdapter.ViewHolder>() {
+class CourseBuyTagAdapter (
+    private val tags: List<String>,
+    private val onTagSelectedListener: OnTagSelectedListener?
+) : RecyclerView.Adapter<CourseBuyTagAdapter.ViewHolder>() {
+
+    interface OnTagSelectedListener {
+        fun onTagSelected(tagName: String)
+    }
 
     private var selectedPosition: Int = 0
 
@@ -38,7 +43,13 @@ class MockTestListTagsAdapter(
             selectedPosition = position
             notifyItemChanged(previousPosition)
             notifyItemChanged(selectedPosition)
+
+            onTagSelectedListener?.onTagSelected(tags[position])
         }
+    }
+
+    fun getSelectedTag(): String? {
+        return tags.getOrNull(selectedPosition)
     }
 
     override fun getItemCount(): Int = tags.size

@@ -4,34 +4,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.niyuktikotlin.R
 
-class HomePageOfferAdapter : RecyclerView.Adapter<HomePageOfferAdapter.ViewHolder>() {
+class HomePageOfferAdapter(
+    private val imageList: List<Int>
+) : RecyclerView.Adapter<HomePageOfferAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.card_home_course_adv, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.card_home_course_adv, parent, false)
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.cardName.text = "Click Here to Buy Course"
-        holder.cardImage.setImageResource(R.drawable.sample_home_offer)
+        holder.cardImage.setImageResource(imageList[position])
     }
 
     override fun getItemCount(): Int {
-        return 6
+        return imageList.size
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var cardName: TextView
-        var cardImage: ImageView
-
-        init {
-            cardImage = itemView.findViewById(R.id.home_course_card_img)
-            cardName = itemView.findViewById(R.id.home_course_card_name)
-        }
+        val cardImage: ImageView = itemView.findViewById(R.id.home_course_card_img)
     }
 }
