@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.NiyuktiKotlin"
+        tools:targetApi="31">
+
+        <activity
+            android:name="io.appwrite.views.CallbackActivity"
+            android:exported="true">
+            <intent-filter android:label="android_web_auth">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="appwrite-callback-68511ac1000c3bac6acc" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".referals.ReferRewardsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login.OtpVerifyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".login.LoginOtpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".wallet.WalletActivity"
+            android:exported="false" />
+        <activity
+            android:name=".test_results.ResultMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".test_conducting.TestQuestionMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".test_conducting.TestMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mock_test_list.MockTestSubListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".mock_test_list.MockTestListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".menu_pages.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".menu_pages.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".menu_pages.AboutUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home_page.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".test_info.TestConfigurationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".test_info.GeneralTestInstructionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".course_resources.CourseResourcesActivity"
+            android:exported="false" />
+
+
+        <activity
+            android:name=".login.LoginActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

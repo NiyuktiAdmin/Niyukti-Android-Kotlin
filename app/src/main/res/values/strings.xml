@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Niyukti</string>
+    <string name="category_prompt">Select Category</string>
+
+    <string name="APPWRITE_PROJECT_ID">68511ac1000c3bac6acc</string>
+    <string name="APPWRITE_PROJECT_NAME">Niyukti DB</string>
+    <string-array name="category_options">
+        <item>Select</item>
+        <item>General</item>
+        <item>SEBC</item>
+        <item>SC</item>
+        <item>ST</item>
+        <item>EWS</item>
+        <item>Ex-Servicemen</item>
+        <item>PH</item>
+    </string-array>
+
+    <string-array name="comparison_options">
+        <item>Marks</item>
+        <item>Accuracy</item>
+        <item>Time Taken</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

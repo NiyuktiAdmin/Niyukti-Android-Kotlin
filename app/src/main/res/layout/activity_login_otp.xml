@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFEF6"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".login.LoginOtpActivity">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/email" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your mobile number"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="We will send u an OTP to verify"
+        android:textColor="#666666"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/login_otp_contact_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bgrd_border"
+        android:gravity="center"
+        android:hint="Enter your Mobile Number"
+        android:inputType="number"
+        android:paddingHorizontal="20sp"
+        android:paddingVertical="12sp"
+        android:textColor="@android:color/black"
+        android:textColorHint="#CCCCCC" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/login_otp_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginVertical="12dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="#BFAFAF"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="By continuing, you agree to our Terms &amp; Conditions and Privacy Policy"
+        android:textSize="12sp"
+        android:layout_marginHorizontal="32dp" />
+
+</LinearLayout>

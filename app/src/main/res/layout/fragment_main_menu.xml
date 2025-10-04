@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Header Section with Profile -->
+        <LinearLayout
+            android:id="@+id/main_menu_fragment_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#F0F0F0"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <!-- Profile Circle -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/main_menu_fragment_profile_card"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#1A1A2E">
+
+                <TextView
+                    android:id="@+id/main_menu_fragment_profile_initials"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="ED"
+                    android:textColor="#FFFFFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- User Info -->
+            <LinearLayout
+                android:id="@+id/main_menu_fragment_user_info"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/main_menu_fragment_user_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="Eren Deshan"
+                        android:textColor="#000000"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/main_menu_fragment_referral_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:text="Referral Code: XXXX"
+                        android:textColor="#666666"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/main_menu_fragment_copy_icon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="8dp"
+                        android:clickable="true"
+                        android:contentDescription="Copy"
+                        android:focusable="true"
+                        app:srcCompat="@drawable/baseline_content_copy_24" />
+
+                    <ImageView
+                        android:id="@+id/main_menu_fragment_share_icon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:clickable="true"
+                        android:contentDescription="Share"
+                        android:focusable="true"
+                        android:src="@drawable/ic_share" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Menu Items Container -->
+        <LinearLayout
+            android:id="@+id/main_menu_fragment_menu_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#FFFFFF">
+
+            <!-- Niyukti Chatbox -->
+            <LinearLayout
+                android:id="@+id/main_menu_fragment_chatbox_item"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/main_menu_fragment_chatbox_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Chatbox"
+                    app:srcCompat="@drawable/ic_bot" />
+
+                <TextView
+                    android:id="@+id/main_menu_fragment_chatbox_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Niyukti Chatbox"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <!-- Free Material +Test -->
+            <LinearLayout
+                android:id="@+id/main_menu_fragment_material_item"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/main_menu_fragment_material_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Free Material"
+                    app:srcCompat="@drawable/ic_free_material" />
+
+                <TextView
+                    android:id="@+id/main_menu_fragment_material_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Free Material +Test"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <!-- Old Papers (Highlighted) -->
+            <LinearLayout
+                android:id="@+id/main_menu_fragment_papers_item"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/main_menu_fragment_papers_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Old Papers"
+                    app:srcCompat="@drawable/ic_old_papers" />
+
+                <TextView
+                    android:id="@+id/main_menu_fragment_papers_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Old Papers"
+                    android:textColor="#000000"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <!-- Revision PDF -->
+            <LinearLayout
+                android:id="@+id/main_menu_fragment_revision_item"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/main_menu_fragment_revision_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Revision PDF"
+                    app:srcCompat="@drawable/ic_subj_course" />
+
+                <TextView
+                    android:id="@+id/main_menu_fragment_revision_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Revision PDF"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="220dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="#cccccc" />
+
+            <!-- Explore -->
+            <LinearLayout
+                android:id="@+id/main_menu_fragment_explore_item"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/main_menu_fragment_explore_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Explore"
+                    app:srcCompat="@drawable/navbar_explore_ic" />
+
+                <TextView
+                    android:id="@+id/main_menu_fragment_explore_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Explore"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <!-- My course -->
+            <LinearLayout
+                android:id="@+id/main_menu_fragment_course_item"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/main_menu_fragment_course_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="My course"
+                    app:srcCompat="@drawable/navbar_mycourse_ic" />
+
+                <TextView
+                    android:id="@+id/main_menu_fragment_course_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="My course"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <!-- Download -->
+            <LinearLayout
+                android:id="@+id/main_menu_fragment_download_item"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/main_menu_fragment_download_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Download"
+                    app:srcCompat="@drawable/ic_download" />
+
+                <TextView
+                    android:id="@+id/main_menu_fragment_download_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Download"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <!-- Rate Us -->
+            <LinearLayout
+                android:id="@+id/main_menu_fragment_rate_item"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/main_menu_fragment_rate_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Rate Us"
+                    app:srcCompat="@drawable/ic_rating" />
+
+                <TextView
+                    android:id="@+id/main_menu_fragment_rate_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Rate Us"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="220dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="#cccccc" />
+
+            <!-- Refer & Earn -->
+            <LinearLayout
+                android:id="@+id/main_menu_fragment_refer_item"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/main_menu_fragment_refer_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Refer &amp; Earn"
+                    app:srcCompat="@drawable/navbar_ref_rew_ic" />
+
+                <TextView
+                    android:id="@+id/main_menu_fragment_refer_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Refer &amp; Earn"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <!-- My Wallet -->
+            <LinearLayout
+                android:id="@+id/main_menu_fragment_wallet_item"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/main_menu_fragment_wallet_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="My Wallet"
+                    app:srcCompat="@drawable/navbar_wallet_ic" />
+
+                <TextView
+                    android:id="@+id/main_menu_fragment_wallet_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="My Wallet"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <!-- How to Use Everthing -->
+            <LinearLayout
+                android:id="@+id/main_menu_fragment_tutorial_item"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/main_menu_fragment_tutorial_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="How to Use Everything"
+                    app:srcCompat="@drawable/ic_how_to_use" />
+
+                <TextView
+                    android:id="@+id/main_menu_fragment_tutorial_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="How to Use Everthing"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="220dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:background="#cccccc" />
+
+            <!-- Setting -->
+            <LinearLayout
+                android:id="@+id/main_menu_fragment_setting_item"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/main_menu_fragment_setting_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Setting"
+                    app:srcCompat="@drawable/ic_settings" />
+
+                <TextView
+                    android:id="@+id/main_menu_fragment_setting_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:text="Setting"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+
+                <ImageView
+                    android:id="@+id/main_menu_fragment_setting_arrow"
+                    android:layout_width="20dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Arrow"
+                    app:srcCompat="@drawable/baseline_navigate_next_24" />
+
+            </LinearLayout>
+
+            <!-- About us -->
+            <LinearLayout
+                android:id="@+id/main_menu_fragment_about_item"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="16dp"
+                android:clickable="true"
+                android:focusable="true">
+
+                <ImageView
+                    android:id="@+id/main_menu_fragment_about_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="About us"
+                    app:srcCompat="@drawable/ic_about_us" />
+
+                <TextView
+                    android:id="@+id/main_menu_fragment_about_text"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:text="About us"
+                    android:textSize="16sp"
+                    android:textColor="#000000" />
+
+                <ImageView
+                    android:id="@+id/main_menu_fragment_about_arrow"
+                    android:layout_width="20dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Arrow"
+                    app:srcCompat="@drawable/baseline_navigate_next_24" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

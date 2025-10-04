@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="selected_dot_color">#FBC02D</color>
+    <color name="unselected_dot_color">#CCCCCC</color>
+
+    <color name="selected_option_background">#24B655</color>
+    <color name="selected_subject_background">#2D6EFF</color>
+
+    <color name="green_answered">#4CAF50</color>
+    <color name="red_not_answered">#F44336</color>
+    <color name="grey_not_visited">#E0E0E0</color>
+    <color name="purple_mark_review">#9C27B0</color>
+    <color name="dark_green_mark_review_answered">#2E7D32</color>
+</resources>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Main dark green rounded rectangle -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#9C27B0" /> <!-- Dark Green color -->
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    <!-- Small green dot at the bottom right -->
+    <item android:gravity="bottom|end"
+        android:right="0dp"
+        android:bottom="0dp">
+        <shape android:shape="oval">
+            <solid android:color="#67E46C" /> <!-- Green color for the dot -->
+            <size android:width="12dp" android:height="12dp"/>
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!--
+      This defines the gradient colors.
+      - The angle is set to 90, which means the gradient will go from bottom to top.
+      - The startColor is the color at the bottom.
+      - The centerColor is an optional color for the middle of the gradient.
+      - The endColor is the color at the top.
+    -->
+    <gradient
+        android:angle="180"
+        android:centerColor="#FDEB9A"
+        android:endColor="#FEFDEE"
+        android:startColor="#FDD954"
+        android:type="linear" />
+
+</shape>
