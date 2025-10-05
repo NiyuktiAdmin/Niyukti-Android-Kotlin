@@ -8,7 +8,7 @@ import com.example.niyuktikotlin.R
 
 import com.example.niyuktikotlin.util.CourseBuyAdapter
 import com.example.niyuktikotlin.util.CourseBuyTagAdapter
-import com.example.niyuktikotlin.util.CourseModel
+import com.example.niyuktikotlin.models.CourseModel
 
 
 open class AllCoursesListActivity : AppCompatActivity(), CourseBuyTagAdapter.OnTagSelectedListener { // IMPLEMENT Listener

@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.niyuktikotlin.R
 import com.example.niyuktikotlin.util.CourseBuyAdapter
 import com.example.niyuktikotlin.util.CourseBuyTagAdapter
-import com.example.niyuktikotlin.util.CourseModel
+import com.example.niyuktikotlin.models.CourseModel
 
 class SubjectWiseCourseListActivity : AppCompatActivity(), CourseBuyTagAdapter.OnTagSelectedListener {
     private lateinit var tagsRv: RecyclerView

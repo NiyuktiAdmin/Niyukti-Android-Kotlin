@@ -11,6 +11,7 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.niyuktikotlin.R
 import com.example.niyuktikotlin.mock_test_list.MockTestSubListActivity
+import com.example.niyuktikotlin.models.CourseModel
 
 class CourseBuyAdapter(
     private val courseList: List<CourseModel>

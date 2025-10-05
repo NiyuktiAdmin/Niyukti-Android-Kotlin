@@ -1,4 +1,4 @@
-package com.example.niyuktikotlin.util
+package com.example.niyuktikotlin.models
 
 data class CourseModel(
     val title: String,

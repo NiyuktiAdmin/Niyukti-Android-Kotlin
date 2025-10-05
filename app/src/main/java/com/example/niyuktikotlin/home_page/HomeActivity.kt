@@ -23,7 +23,7 @@ import com.example.niyuktikotlin.menu_fragment.FragmentMainMenu
 import com.example.niyuktikotlin.referals.ReferRewardsActivity
 import com.example.niyuktikotlin.subject_wise_course.SubjectWiseCourseListActivity
 import com.example.niyuktikotlin.util.CourseBuyAdapter
-import com.example.niyuktikotlin.util.CourseModel
+import com.example.niyuktikotlin.models.CourseModel
 import com.example.niyuktikotlin.wallet.WalletActivity
 import io.appwrite.Client
 import io.appwrite.exceptions.AppwriteException
@@ -52,11 +52,6 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var constableRv: RecyclerView
     private lateinit var recentlyAddedRv: RecyclerView
     private lateinit var packagesRv: RecyclerView
-
-    private lateinit var navbarHome: LinearLayout
-    private lateinit var navbarReferEarn: LinearLayout
-    private lateinit var navbarWallet: LinearLayout
-    private lateinit var navbarMyCourses: LinearLayout
 
     private lateinit var layoutManager: LinearLayoutManager
     private val handler = Handler()
@@ -243,18 +238,12 @@ class HomeActivity : AppCompatActivity() {
         niyuktiChatBotCard = findViewById(R.id.home_activity_chat_bot)
         myPerformanceCard = findViewById(R.id.home_activity_my_performance)
 
-        navbarReferEarn = findViewById(R.id.home_navbar_refer_earn_btn)
-        navbarWallet = findViewById(R.id.home_navbar_wallet_btn)
-        navbarMyCourses = findViewById(R.id.home_navbar_mycourses_btn)
-
         navigationMenuBtn = findViewById(R.id.home_activity_menu_btn)
+        setNavigationMenuBtn()
     }
 
     private fun setNavbarButtons() {
-        setNavigationMenuBtn()
-        navbarMyCourses.setOnClickListener { goTo(AllCoursesListActivity::class.java) }
-        navbarWallet.setOnClickListener { goTo(WalletActivity::class.java) }
-        navbarReferEarn.setOnClickListener { goTo(ReferRewardsActivity::class.java) }
+
     }
 
     private fun setNavigationMenuBtn() {

@@ -30,7 +30,7 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_settings)
 
         logoutCard = findViewById(R.id.logout_card)
-        backBtn = findViewById(R.id.about_us_back)
+        backBtn = findViewById(R.id.settings_back_btn)
 
         client = Client(this, "https://fra.cloud.appwrite.io/v1")
             .setProject(getString(R.string.APPWRITE_PROJECT_ID))
