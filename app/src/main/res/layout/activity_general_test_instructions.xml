@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_white"
     tools:context=".test_info.GeneralTestInstructionsActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewalpha2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/navigation_white"
         app:cardCornerRadius="0dp"
         app:cardElevation="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,6 +30,8 @@
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:layout_margin="8dp"
+                android:clickable="true"
+                app:tint="@color/text_black"
                 app:srcCompat="@drawable/baseline_arrow_back_24" />
 
 
@@ -37,6 +41,7 @@
                 android:layout_marginHorizontal="8dp"
                 android:layout_weight="1"
                 android:text="General Instructions"
+                android:textColor="@color/text_black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -59,6 +64,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="20dp"
+            app:cardBackgroundColor="@color/navigation_white"
             app:cardCornerRadius="8dp"
             app:cardElevation="8dp">
 
@@ -71,10 +77,9 @@
                     android:id="@+id/title_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="24dp"
                     android:gravity="center"
                     android:text="Test Instructions"
-                    android:textColor="#000000"
+                    android:textColor="@color/text_black"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -109,7 +114,7 @@
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="12dp"
                             android:background="@drawable/bullet_point"
-                            android:backgroundTint="#000000" />
+                            android:backgroundTint="@color/text_black" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -117,7 +122,7 @@
                             android:layout_weight="1"
                             android:lineSpacingExtra="4dp"
                             android:text="Read each question carefully before selecting your answer. You cannot change your answer once submitted."
-                            android:textColor="#333333"
+                            android:textColor="@color/text_black"
                             android:textSize="16sp" />
 
                     </LinearLayout>
@@ -135,7 +140,7 @@
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="12dp"
                             android:background="@drawable/bullet_point"
-                            android:backgroundTint="#000000" />
+                            android:backgroundTint="@color/text_black" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -143,7 +148,7 @@
                             android:layout_weight="1"
                             android:lineSpacingExtra="4dp"
                             android:text="Each correct answer carries +1 mark. Incorrect answers will result in -0.33 marks (negative marking)."
-                            android:textColor="#333333"
+                            android:textColor="@color/text_black"
                             android:textSize="16sp" />
 
                     </LinearLayout>
@@ -161,7 +166,7 @@
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="12dp"
                             android:background="@drawable/bullet_point"
-                            android:backgroundTint="#000000" />
+                            android:backgroundTint="@color/text_black" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -169,7 +174,7 @@
                             android:layout_weight="1"
                             android:lineSpacingExtra="4dp"
                             android:text="Each correct answer carries +1 mark. Incorrect answers will result in -0.33 marks (negative marking)."
-                            android:textColor="#333333"
+                            android:textColor="@color/text_black"
                             android:textSize="16sp" />
 
                     </LinearLayout>
@@ -187,7 +192,7 @@
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="12dp"
                             android:background="@drawable/bullet_point"
-                            android:backgroundTint="#000000" />
+                            android:backgroundTint="@color/text_black" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -195,7 +200,7 @@
                             android:layout_weight="1"
                             android:lineSpacingExtra="4dp"
                             android:text="Each correct answer carries +1 mark. Incorrect answers will result in -0.33 marks (negative marking)."
-                            android:textColor="#333333"
+                            android:textColor="@color/text_black"
                             android:textSize="16sp" />
 
                     </LinearLayout>
@@ -213,7 +218,7 @@
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="12dp"
                             android:background="@drawable/bullet_point"
-                            android:backgroundTint="#000000" />
+                            android:backgroundTint="@color/text_black" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -221,7 +226,7 @@
                             android:layout_weight="1"
                             android:lineSpacingExtra="4dp"
                             android:text="Each correct answer carries +1 mark. Incorrect answers will result in -0.33 marks (negative marking)."
-                            android:textColor="#333333"
+                            android:textColor="@color/text_black"
                             android:textSize="16sp" />
 
                     </LinearLayout>
@@ -238,7 +243,7 @@
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="12dp"
                             android:background="@drawable/bullet_point"
-                            android:backgroundTint="#000000" />
+                            android:backgroundTint="@color/text_black" />
 
                         <TextView
                             android:layout_width="0dp"
@@ -246,7 +251,7 @@
                             android:layout_weight="1"
                             android:lineSpacingExtra="4dp"
                             android:text="The test is divided into multiple sections. You must complete all sections within the given time limit."
-                            android:textColor="#333333"
+                            android:textColor="@color/text_black"
                             android:textSize="16sp" />
 
                     </LinearLayout>
@@ -261,10 +266,12 @@
         android:id="@+id/general_test_instruction_start_btn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#F3F4F6"
+        android:background="@color/background_dim"
+        android:clickable="true"
         android:gravity="center"
         android:padding="16dp"
         android:text="Start Test"
+        android:textColor="@color/text_dim"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

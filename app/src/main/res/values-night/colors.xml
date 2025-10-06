@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="selected_dot_color">#FBC02D</color>
+    <color name="unselected_dot_color">#CCCCCC</color>
+
+    <color name="selected_option_background">#24B655</color>
+    <color name="selected_subject_background">#2D6EFF</color>
+
+    <color name="green_answered">#4CAF50</color>
+    <color name="red_not_answered">#F44336</color>
+    <color name="grey_not_visited">#E0E0E0</color>
+    <color name="purple_mark_review">#9C27B0</color>
+    <color name="dark_green_mark_review_answered">#2E7D32</color>
+
+
+    <!-- ========== GENERAL ============ -->
+    <color name="background_white">#1c1c1c</color>
+    <color name="navigation_white">#2A261D</color>
+    <color name="background_dim">#454441</color>
+    <color name="dialog_background">#2E313B</color>
+
+    <color name="text_black">#FFFFFF</color>
+    <color name="text_dim">#757575</color>
+    <color name="text_white">#000000</color>
+
+    <!-- ========== ABOUT US ============ -->
+    <color name="about_accent_1">#3C4C75</color>
+    <color name="about_accent_2">#6B5432</color>
+    <color name="about_accent_3">#2E5532</color>
+
+    <!-- ========== HOME PAGE ============ -->
+    <color name="home_card">#F68726</color>
+
+    <!-- ========== LOGIN PAGE ============ -->
+    <color name="login_gold">#F6B000</color>
+    <color name="login_inactive">#E1B446</color>
+
+    <!-- ========== TEST PAGES ============ -->
+    <color name="test_limited_time_validity">#FEF3CD</color>
+
+    <!-- ========== RESULT PAGES ============ -->
+    <color name="result_accent_1">#4D6EC1</color>
+    <color name="result_accent_3">#3F9848</color>
+
+    <color name="result_bar_1">#93B2FF</color>
+    <color name="result_bar_2">#FFDAA2</color>
+    <color name="result_bar_3">#90FF9B</color>
+
+    <!-- ========== HAMBURGER MENU ============ -->
+    <color name="hamburger_background">#1F222A</color>
+    <color name="hamburger_tint">#272A33</color>
+</resources>

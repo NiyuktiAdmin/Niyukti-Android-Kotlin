@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFEF6"
+    android:background="@color/background_white"
     tools:context=".login.OtpVerifyActivity">
 
     <LinearLayout
@@ -29,7 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Enter verification code"
-            android:textColor="@android:color/black"
+            android:textColor="@color/text_black"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -39,7 +38,7 @@
             android:layout_marginTop="12dp"
             android:gravity="center"
             android:text="We've sent a 6-digit code to"
-            android:textColor="#808080"
+            android:textColor="@color/text_black"
             android:textSize="16sp" />
 
         <TextView
@@ -50,6 +49,7 @@
             android:layout_marginBottom="24dp"
             android:gravity="center"
             android:text="+91 988 810 4142"
+            android:textColor="@color/text_black"
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -65,8 +65,8 @@
             android:inputType="number"
             android:paddingHorizontal="20sp"
             android:paddingVertical="12sp"
-            android:textColor="@android:color/black"
-            android:textColorHint="#CCCCCC" />
+            android:textColor="@color/text_black"
+            android:textColorHint="@color/text_dim" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/verify_otp_btn"
@@ -76,7 +76,7 @@
             android:layout_marginVertical="12dp"
             android:clickable="true"
             android:focusable="true"
-            app:cardBackgroundColor="#BFAFAF"
+            app:cardBackgroundColor="@color/login_inactive"
             app:cardCornerRadius="16dp"
             app:cardElevation="8dp">
 
@@ -91,7 +91,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Verify"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/text_dim"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
@@ -104,7 +104,7 @@
             android:layout_marginHorizontal="32dp"
             android:gravity="center"
             android:text="Resend code in 12s"
-            android:textColor="#808080"
+            android:textColor="@color/text_dim"
             android:textSize="12sp" />
 
     </LinearLayout>
@@ -113,17 +113,16 @@
         android:id="@+id/tvReEnterPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change Your Mobile Number"
-        android:textColor="#FF8C00"
-        android:textSize="16sp"
-        android:layout_marginTop="24dp"
-        android:clickable="true"
-        android:focusable="true"
         android:layout_gravity="end"
         android:layout_marginHorizontal="32dp"
         android:layout_marginBottom="24dp"
-        android:gravity="center"
         android:autoLink="none"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="Change Your Mobile Number"
+        android:textColor="@color/login_gold"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

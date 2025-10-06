@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:background="@color/hamburger_background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,19 +16,19 @@
             android:id="@+id/main_menu_fragment_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#F0F0F0"
+            android:background="@color/hamburger_tint"
+            android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:padding="16dp"
-            android:gravity="center_vertical">
+            android:padding="16dp">
 
             <!-- Profile Circle -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/main_menu_fragment_profile_card"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                app:cardBackgroundColor="#1A1A2E"
                 app:cardCornerRadius="30dp"
-                app:cardElevation="2dp"
-                app:cardBackgroundColor="#1A1A2E">
+                app:cardElevation="2dp">
 
                 <TextView
                     android:id="@+id/main_menu_fragment_profile_initials"
@@ -63,7 +63,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:text="Eren Deshan"
-                        android:textColor="#000000"
+                        android:textColor="@color/text_black"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
@@ -82,7 +82,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
                         android:text="Referral Code: XXXX"
-                        android:textColor="#666666"
+                        android:textColor="@color/text_black"
                         android:textSize="14sp" />
 
                     <ImageView
@@ -93,6 +93,7 @@
                         android:clickable="true"
                         android:contentDescription="Copy"
                         android:focusable="true"
+                        android:tint="@color/text_black"
                         app:srcCompat="@drawable/baseline_content_copy_24" />
 
                     <ImageView
@@ -102,7 +103,8 @@
                         android:clickable="true"
                         android:contentDescription="Share"
                         android:focusable="true"
-                        android:src="@drawable/ic_share" />
+                        android:src="@drawable/ic_share"
+                        android:tint="@color/text_black" />
 
                 </LinearLayout>
 
@@ -115,25 +117,25 @@
             android:id="@+id/main_menu_fragment_menu_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="#FFFFFF">
+            android:orientation="vertical">
 
             <!-- Niyukti Chatbox -->
             <LinearLayout
                 android:id="@+id/main_menu_fragment_chatbox_item"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <ImageView
                     android:id="@+id/main_menu_fragment_chatbox_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Chatbox"
+                    android:tint="@color/text_black"
                     app:srcCompat="@drawable/ic_bot" />
 
                 <TextView
@@ -142,8 +144,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="Niyukti Chatbox"
-                    android:textSize="16sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/text_black"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -152,17 +154,18 @@
                 android:id="@+id/main_menu_fragment_material_item"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <ImageView
                     android:id="@+id/main_menu_fragment_material_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Free Material"
+                    android:tint="@color/text_black"
                     app:srcCompat="@drawable/ic_free_material" />
 
                 <TextView
@@ -171,8 +174,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="Free Material +Test"
-                    android:textSize="16sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/text_black"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -192,6 +195,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Old Papers"
+                    android:tint="@color/text_black"
                     app:srcCompat="@drawable/ic_old_papers" />
 
                 <TextView
@@ -200,7 +204,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="Old Papers"
-                    android:textColor="#000000"
+                    android:textColor="@color/text_black"
                     android:textSize="16sp" />
 
             </LinearLayout>
@@ -210,17 +214,18 @@
                 android:id="@+id/main_menu_fragment_revision_item"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <ImageView
                     android:id="@+id/main_menu_fragment_revision_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Revision PDF"
+                    android:tint="@color/text_black"
                     app:srcCompat="@drawable/ic_subj_course" />
 
                 <TextView
@@ -229,8 +234,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="Revision PDF"
-                    android:textSize="16sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/text_black"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -245,17 +250,18 @@
                 android:id="@+id/main_menu_fragment_explore_item"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <ImageView
                     android:id="@+id/main_menu_fragment_explore_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Explore"
+                    android:tint="@color/text_black"
                     app:srcCompat="@drawable/navbar_explore_ic" />
 
                 <TextView
@@ -264,8 +270,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="Explore"
-                    android:textSize="16sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/text_black"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -274,17 +280,18 @@
                 android:id="@+id/main_menu_fragment_course_item"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <ImageView
                     android:id="@+id/main_menu_fragment_course_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="My course"
+                    android:tint="@color/text_black"
                     app:srcCompat="@drawable/navbar_mycourse_ic" />
 
                 <TextView
@@ -293,8 +300,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="My course"
-                    android:textSize="16sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/text_black"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -303,17 +310,18 @@
                 android:id="@+id/main_menu_fragment_download_item"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <ImageView
                     android:id="@+id/main_menu_fragment_download_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Download"
+                    android:tint="@color/text_black"
                     app:srcCompat="@drawable/ic_download" />
 
                 <TextView
@@ -322,8 +330,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="Download"
-                    android:textSize="16sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/text_black"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -332,17 +340,18 @@
                 android:id="@+id/main_menu_fragment_rate_item"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <ImageView
                     android:id="@+id/main_menu_fragment_rate_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Rate Us"
+                    android:tint="@color/text_black"
                     app:srcCompat="@drawable/ic_rating" />
 
                 <TextView
@@ -351,8 +360,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="Rate Us"
-                    android:textSize="16sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/text_black"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -367,17 +376,18 @@
                 android:id="@+id/main_menu_fragment_refer_item"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <ImageView
                     android:id="@+id/main_menu_fragment_refer_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Refer &amp; Earn"
+                    android:tint="@color/text_black"
                     app:srcCompat="@drawable/navbar_ref_rew_ic" />
 
                 <TextView
@@ -386,8 +396,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="Refer &amp; Earn"
-                    android:textSize="16sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/text_black"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -396,17 +406,18 @@
                 android:id="@+id/main_menu_fragment_wallet_item"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <ImageView
                     android:id="@+id/main_menu_fragment_wallet_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="My Wallet"
+                    android:tint="@color/text_black"
                     app:srcCompat="@drawable/navbar_wallet_ic" />
 
                 <TextView
@@ -415,8 +426,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="My Wallet"
-                    android:textSize="16sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/text_black"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -425,17 +436,18 @@
                 android:id="@+id/main_menu_fragment_tutorial_item"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <ImageView
                     android:id="@+id/main_menu_fragment_tutorial_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="How to Use Everything"
+                    android:tint="@color/text_black"
                     app:srcCompat="@drawable/ic_how_to_use" />
 
                 <TextView
@@ -444,8 +456,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:text="How to Use Everthing"
-                    android:textSize="16sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/text_black"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
@@ -460,34 +472,36 @@
                 android:id="@+id/main_menu_fragment_setting_item"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <ImageView
                     android:id="@+id/main_menu_fragment_setting_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Setting"
+                    android:tint="@color/text_black"
                     app:srcCompat="@drawable/ic_settings" />
 
                 <TextView
                     android:id="@+id/main_menu_fragment_setting_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginStart="16dp"
+                    android:layout_weight="1"
                     android:text="Setting"
-                    android:textSize="16sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/text_black"
+                    android:textSize="16sp" />
 
                 <ImageView
                     android:id="@+id/main_menu_fragment_setting_arrow"
                     android:layout_width="20dp"
                     android:layout_height="24dp"
                     android:contentDescription="Arrow"
+                    android:tint="@color/text_black"
                     app:srcCompat="@drawable/baseline_navigate_next_24" />
 
             </LinearLayout>
@@ -497,34 +511,36 @@
                 android:id="@+id/main_menu_fragment_about_item"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:padding="16dp"
                 android:clickable="true"
-                android:focusable="true">
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp">
 
                 <ImageView
                     android:id="@+id/main_menu_fragment_about_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="About us"
+                    android:tint="@color/text_black"
                     app:srcCompat="@drawable/ic_about_us" />
 
                 <TextView
                     android:id="@+id/main_menu_fragment_about_text"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:layout_marginStart="16dp"
+                    android:layout_weight="1"
                     android:text="About us"
-                    android:textSize="16sp"
-                    android:textColor="#000000" />
+                    android:textColor="@color/text_black"
+                    android:textSize="16sp" />
 
                 <ImageView
                     android:id="@+id/main_menu_fragment_about_arrow"
                     android:layout_width="20dp"
                     android:layout_height="24dp"
                     android:contentDescription="Arrow"
+                    android:tint="@color/text_black"
                     app:srcCompat="@drawable/baseline_navigate_next_24" />
 
             </LinearLayout>

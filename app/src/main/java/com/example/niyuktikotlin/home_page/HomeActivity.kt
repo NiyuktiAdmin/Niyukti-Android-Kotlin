@@ -19,11 +19,13 @@ import androidx.recyclerview.widget.SnapHelper
 import com.example.niyuktikotlin.mock_test_list.MockTestListActivity
 import com.example.niyuktikotlin.R
 import com.example.niyuktikotlin.all_courses.AllCoursesListActivity
+import com.example.niyuktikotlin.free_material_tests.FreeMaterialTestActivity
 import com.example.niyuktikotlin.menu_fragment.FragmentMainMenu
 import com.example.niyuktikotlin.referals.ReferRewardsActivity
 import com.example.niyuktikotlin.subject_wise_course.SubjectWiseCourseListActivity
 import com.example.niyuktikotlin.util.CourseBuyAdapter
 import com.example.niyuktikotlin.models.CourseModel
+import com.example.niyuktikotlin.my_performance.MyPerformanceActivity
 import com.example.niyuktikotlin.wallet.WalletActivity
 import io.appwrite.Client
 import io.appwrite.exceptions.AppwriteException
@@ -132,7 +134,6 @@ class HomeActivity : AppCompatActivity() {
         referralCode.text = myRefCode
 
         setCardButtons()
-        setNavbarButtons()
 
         referCodeCopy.setOnClickListener {
             val clipboard = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
@@ -146,6 +147,10 @@ class HomeActivity : AppCompatActivity() {
         mockTestCard.setOnClickListener { goTo(MockTestListActivity::class.java) }
         allCoursesCard.setOnClickListener { goTo(AllCoursesListActivity::class.java) }
         subjectCourseCard.setOnClickListener { goTo(SubjectWiseCourseListActivity::class.java) }
+
+        freeMaterial.setOnClickListener { goTo(FreeMaterialTestActivity::class.java) }
+        myPerformanceCard.setOnClickListener { goTo(MyPerformanceActivity::class.java) }
+
     }
 
     private fun goTo(activityClass: Class<*>) {
@@ -240,10 +245,6 @@ class HomeActivity : AppCompatActivity() {
 
         navigationMenuBtn = findViewById(R.id.home_activity_menu_btn)
         setNavigationMenuBtn()
-    }
-
-    private fun setNavbarButtons() {
-
     }
 
     private fun setNavigationMenuBtn() {

@@ -12,12 +12,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Sarah"
-        android:textColor="#000000"
-        android:textSize="16sp"
-        android:textStyle="bold"
         android:ellipsize="end"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:text="Sarah"
+        android:textColor="@color/text_black"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <!-- Date -->
     <TextView
@@ -25,10 +25,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:gravity="center"
         android:text="Dec 15"
-        android:textColor="#757575"
-        android:textSize="14sp"
-        android:gravity="center" />
+        android:textColor="@color/text_dim"
+        android:textSize="14sp" />
 
     <!-- Status -->
     <TextView
@@ -36,13 +36,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="#ff0000"
+        android:background="@color/pure_red"
+        android:gravity="center"
         android:paddingVertical="2dp"
         android:text="Pending"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/text_white"
         android:textSize="14sp"
-        android:textStyle="bold"
-        android:gravity="center" />
+        android:textStyle="bold" />
 
     <!-- Reward -->
     <TextView
@@ -50,10 +50,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:gravity="end"
         android:text="₹100.00"
-        android:textColor="#000000"
+        android:textColor="@color/text_black"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:gravity="end" />
+        android:textStyle="bold" />
 
 </LinearLayout>

@@ -2,6 +2,7 @@ package com.example.niyuktikotlin.subject_wise_course
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.niyuktikotlin.R
@@ -12,6 +13,7 @@ import com.example.niyuktikotlin.models.CourseModel
 class SubjectWiseCourseListActivity : AppCompatActivity(), CourseBuyTagAdapter.OnTagSelectedListener {
     private lateinit var tagsRv: RecyclerView
     private lateinit var itemsRv: RecyclerView
+    lateinit var backBtn: ImageView
 
     private lateinit var courseCategories: Map<String, List<CourseModel>>
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,9 +23,13 @@ class SubjectWiseCourseListActivity : AppCompatActivity(), CourseBuyTagAdapter.O
 
         itemsRv = findViewById(R.id.sub_courses_list_activity_items_rv)
         tagsRv = findViewById(R.id.sub_courses_list_activity_tags_rv)
+        backBtn = findViewById(R.id.sub_courses_list_activity_menu_btn)
+
+        backBtn.setOnClickListener {
+            finish()
+        }
 
         setTagsRv()
-
         setItemsRv()
     }
 

@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_white"
     tools:context=".Test_results.ResultMainActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/bard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/navigation_white"
         app:cardCornerRadius="0dp"
         app:cardElevation="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,6 +30,8 @@
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:layout_margin="8dp"
+                android:clickable="true"
+                android:tint="@color/text_black"
                 app:srcCompat="@drawable/ic_menu" />
 
 
@@ -37,6 +41,7 @@
                 android:layout_marginHorizontal="8dp"
                 android:layout_weight="1"
                 android:text="Result"
+                android:textColor="@color/text_black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -46,7 +51,6 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="#F5F5F5"
         android:fillViewport="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,11 +65,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="4dp"
                 android:layout_marginTop="14dp"
+                android:layout_marginBottom="4dp"
                 android:gravity="center"
                 android:text="Constable Mock Test"
-                android:textColor="@android:color/black"
+                android:textColor="@color/text_black"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -73,12 +77,13 @@
                 android:layout_width="220dp"
                 android:layout_height="1dp"
                 android:layout_gravity="center"
-                android:background="#000000" />
+                android:background="@color/text_dim" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                app:cardBackgroundColor="@color/navigation_white"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -103,6 +108,7 @@
                             <androidx.cardview.widget.CardView
                                 android:layout_width="120dp"
                                 android:layout_height="120dp"
+                                app:cardBackgroundColor="@color/navigation_white"
                                 app:cardCornerRadius="60dp"
                                 app:cardElevation="0dp">
 
@@ -124,7 +130,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="72"
-                                            android:textColor="@android:color/black"
+                                            android:textColor="@color/text_black"
                                             android:textSize="32sp"
                                             android:textStyle="bold" />
 
@@ -132,7 +138,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:text="out of 100"
-                                            android:textColor="#888888"
+                                            android:textColor="@color/text_dim"
                                             android:textSize="12sp" />
                                     </LinearLayout>
                                 </FrameLayout>
@@ -142,7 +148,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Your Score"
-                                android:textColor="#888888"
+                                android:textColor="@color/text_dim"
                                 android:textSize="14sp" />
                         </LinearLayout>
 
@@ -170,7 +176,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Rank 12"
-                                    android:textColor="@android:color/black"
+                                    android:textColor="@color/text_black"
                                     android:textSize="24sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
@@ -180,13 +186,13 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="16dp"
                                 android:text="of 200 students"
-                                android:textColor="#888888"
+                                android:textColor="@color/text_dim"
                                 android:textSize="14sp" />
 
                             <androidx.cardview.widget.CardView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                app:cardBackgroundColor="#FFF8E1"
+                                app:cardBackgroundColor="@color/test_limited_time_validity"
                                 app:cardCornerRadius="8dp"
                                 app:cardElevation="0dp">
 
@@ -222,14 +228,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginVertical="12dp"
-                        android:background="#F5F5F5"
+                        app:cardBackgroundColor="@color/background_dim"
                         app:cardCornerRadius="12dp"
                         app:cardElevation="0dp">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:background="#F5F5F5"
                             android:orientation="vertical"
                             android:padding="16dp">
 
@@ -244,13 +249,13 @@
                                     android:layout_width="8dp"
                                     android:layout_height="8dp"
                                     android:layout_marginEnd="8dp"
-                                    android:background="#FF9800" />
+                                    android:background="@color/login_gold" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Great job!"
-                                    android:textColor="@android:color/black"
+                                    android:textColor="@color/text_black"
                                     android:textSize="16sp"
                                     android:textStyle="bold" />
                             </LinearLayout>
@@ -259,7 +264,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="You scored better than 68% of all test takers. Keep up the excellent work!"
-                                android:textColor="#666666"
+                                android:textColor="@color/text_dim"
                                 android:textSize="14sp" />
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
@@ -274,14 +279,13 @@
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
                             android:layout_weight="1"
-                            android:background="#E3F2FD"
+                            app:cardBackgroundColor="@color/result_accent_1"
                             app:cardCornerRadius="12dp"
                             app:cardElevation="0dp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="#E3F2FD"
                                 android:gravity="center"
                                 android:orientation="vertical"
                                 android:padding="16dp">
@@ -298,7 +302,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Accuracy"
-                                    android:textColor="#666666"
+                                    android:textColor="@color/text_black"
                                     android:textSize="14sp" />
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
@@ -308,14 +312,13 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_weight="1"
-                            android:background="#E8F5E8"
+                            app:cardBackgroundColor="@color/result_accent_3"
                             app:cardCornerRadius="12dp"
                             app:cardElevation="0dp">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="#E8F5E8"
                                 android:gravity="center"
                                 android:orientation="vertical"
                                 android:padding="16dp">
@@ -332,7 +335,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Time Taken"
-                                    android:textColor="#666666"
+                                    android:textColor="@color/text_black"
                                     android:textSize="14sp" />
                             </LinearLayout>
                         </androidx.cardview.widget.CardView>
@@ -345,6 +348,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/navigation_white"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -357,9 +361,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Exam Summary"
                         android:layout_marginBottom="12dp"
-                        android:textColor="@android:color/black"
+                        android:text="Exam Summary"
+                        android:textColor="@color/text_black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -712,6 +716,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:layout_weight="1"
+                    android:clickable="true"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="0dp">
 
@@ -731,16 +736,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
+                    android:clickable="true"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="4dp">
 
                     <ImageView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        android:background="#FFFFFF"
+                        android:background="@color/navigation_white"
                         android:padding="12dp"
                         android:src="@drawable/ic_share"
-                        app:tint="@android:color/black" />
+                        app:tint="@color/text_black" />
                 </androidx.cardview.widget.CardView>
             </LinearLayout>
 
@@ -748,17 +754,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
+                android:clickable="true"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#1A1A1A"
+                    android:background="@color/text_black"
                     android:gravity="center"
                     android:padding="16dp"
                     android:text="Download Report"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/text_white"
                     android:textSize="16sp"
                     android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
@@ -767,6 +774,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                app:cardBackgroundColor="@color/navigation_white"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -781,7 +789,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="16dp"
                         android:text="Leaderboard"
-                        android:textColor="@android:color/black"
+                        android:textColor="@color/text_black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -796,7 +804,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Filter by category :"
-                            android:textColor="@android:color/black"
+                            android:textColor="@color/text_black"
                             android:textSize="14sp" />
 
                         <androidx.cardview.widget.CardView
@@ -804,17 +812,17 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_marginEnd="16dp"
-                            android:background="#F5F5F5"
+                            android:clickable="true"
+                            app:cardBackgroundColor="@color/background_dim"
                             app:cardCornerRadius="8dp"
                             app:cardElevation="0dp">
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:background="#F5F5F5"
                                 android:padding="8dp"
                                 android:text="All Categories ▼"
-                                android:textColor="@android:color/black"
+                                android:textColor="@color/text_black"
                                 android:textSize="12sp" />
                         </androidx.cardview.widget.CardView>
 
@@ -827,7 +835,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="View More"
-                            android:textColor="#4285F4"
+                            android:textColor="@color/text_black"
                             android:textSize="14sp" />
                     </LinearLayout>
 
@@ -847,6 +855,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/navigation_white"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="4dp">
 
@@ -862,7 +871,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="16dp"
                         android:text="Filter-wise Performance"
-                        android:textColor="@android:color/black"
+                        android:textColor="@color/text_black"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -871,7 +880,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:text="Filter Subjects"
-                        android:textColor="@android:color/black"
+                        android:textColor="@color/text_black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -885,7 +894,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="8dp"
                         android:text="Compared by"
-                        android:textColor="@android:color/black"
+                        android:textColor="@color/text_black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
@@ -909,7 +918,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#FAFAFA"
+                        android:background="@color/background_dim"
                         android:foreground="@drawable/bgrd_border"
                         android:orientation="vertical"
                         android:padding="12dp">
@@ -926,14 +935,14 @@
                                 android:layout_height="24dp"
                                 android:layout_marginEnd="8dp"
                                 android:src="@drawable/baseline_star_outline_24"
-                                app:tint="#000000" />
+                                app:tint="@color/text_black" />
 
                             <TextView
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Overall"
-                                android:textColor="@android:color/black"
+                                android:textColor="@color/text_black"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
 
@@ -941,7 +950,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="150/200"
-                                android:textColor="@android:color/black"
+                                android:textColor="@color/text_black"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
                         </LinearLayout>
@@ -963,14 +972,14 @@
                                     android:layout_width="10dp"
                                     android:layout_height="10dp"
                                     android:layout_marginEnd="8dp"
-                                    android:background="#4285F4" />
+                                    android:background="@color/result_bar_1" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="Your Score"
-                                    android:textColor="#666666"
+                                    android:textColor="@color/text_dim"
                                     android:textSize="14sp" />
 
                                 <TextView
@@ -978,7 +987,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="8dp"
                                     android:text="150"
-                                    android:textColor="#4285F4"
+                                    android:textColor="@color/result_bar_1"
                                     android:textSize="14sp" />
                             </LinearLayout>
 
@@ -986,10 +995,10 @@
                                 style="?android:attr/progressBarStyleHorizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:backgroundTint="#F0F0F0"
+                                android:backgroundTint="@color/text_dim"
                                 android:max="200"
                                 android:progress="150"
-                                android:progressTint="#4285F4" />
+                                android:progressTint="@color/result_bar_1" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -1009,14 +1018,14 @@
                                     android:layout_width="10dp"
                                     android:layout_height="10dp"
                                     android:layout_marginEnd="8dp"
-                                    android:background="#4CAF50" />
+                                    android:background="@color/result_bar_2" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="Topper Score"
-                                    android:textColor="#666666"
+                                    android:textColor="@color/text_dim"
                                     android:textSize="14sp" />
 
                                 <TextView
@@ -1024,7 +1033,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="8dp"
                                     android:text="180"
-                                    android:textColor="#4CAF50"
+                                    android:textColor="@color/result_bar_2"
                                     android:textSize="14sp" />
                             </LinearLayout>
 
@@ -1032,10 +1041,10 @@
                                 style="?android:attr/progressBarStyleHorizontal"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:backgroundTint="#F0F0F0"
+                                android:backgroundTint="@color/text_dim"
                                 android:max="200"
                                 android:progress="180"
-                                android:progressTint="#4CAF50" />
+                                android:progressTint="@color/result_bar_2" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -1054,14 +1063,14 @@
                                     android:layout_width="10dp"
                                     android:layout_height="10dp"
                                     android:layout_marginEnd="8dp"
-                                    android:background="#9E9E9E" />
+                                    android:background="@color/result_bar_3" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="Average Score"
-                                    android:textColor="#666666"
+                                    android:textColor="@color/text_dim"
                                     android:textSize="14sp" />
 
                                 <TextView
@@ -1069,7 +1078,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_marginStart="8dp"
                                     android:text="80"
-                                    android:textColor="#9E9E9E"
+                                    android:textColor="@color/result_bar_3"
                                     android:textSize="14sp" />
                             </LinearLayout>
 
@@ -1080,7 +1089,7 @@
                                 android:backgroundTint="#F0F0F0"
                                 android:max="200"
                                 android:progress="80"
-                                android:progressTint="#9E9E9E" />
+                                android:progressTint="@color/result_bar_3" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -1093,6 +1102,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginBottom="8dp"
+                android:clickable="true"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp">
 
@@ -1116,21 +1126,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginBottom="8dp"
+                android:clickable="true"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#000000"
+                    android:background="@color/text_black"
                     android:drawablePadding="8dp"
                     android:gravity="center"
                     android:padding="16dp"
                     android:text="Reattempt Test"
-                    android:textColor="@android:color/white"
+                    android:textColor="@color/text_white"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:drawableTint="@android:color/black" />
+                    android:textStyle="bold" />
             </androidx.cardview.widget.CardView>
 
 

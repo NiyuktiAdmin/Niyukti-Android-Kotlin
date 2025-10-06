@@ -13,6 +13,7 @@
             android:id="@+id/cardView5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/navigation_white"
             app:cardCornerRadius="0dp"
             app:cardElevation="18dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -39,12 +40,14 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_margin="4dp"
+                        android:tint="@color/text_black"
                         app:srcCompat="@drawable/navbar_home_ic" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Home"
+                        android:textColor="@color/text_black"
                         android:textSize="9sp" />
 
                 </LinearLayout>
@@ -61,12 +64,14 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_margin="4dp"
+                        android:tint="@color/text_black"
                         app:srcCompat="@drawable/navbar_mycourse_ic" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="My Course"
+                        android:textColor="@color/text_black"
                         android:textSize="9sp" />
 
                 </LinearLayout>
@@ -83,12 +88,14 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_margin="4dp"
+                        android:tint="@color/text_black"
                         app:srcCompat="@drawable/navbar_explore_ic" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Explore"
+                        android:textColor="@color/text_black"
                         android:textSize="9sp" />
 
                 </LinearLayout>
@@ -105,12 +112,14 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_margin="4dp"
+                        android:tint="@color/text_black"
                         app:srcCompat="@drawable/navbar_ref_rew_ic" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Refer &amp; earn"
+                        android:textColor="@color/text_black"
                         android:textSize="9sp" />
 
                 </LinearLayout>
@@ -127,12 +136,14 @@
                         android:layout_width="20dp"
                         android:layout_height="20dp"
                         android:layout_margin="4dp"
+                        android:tint="@color/text_black"
                         app:srcCompat="@drawable/navbar_wallet_ic" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Wallet"
+                        android:textColor="@color/text_black"
                         android:textSize="9sp" />
 
                 </LinearLayout>

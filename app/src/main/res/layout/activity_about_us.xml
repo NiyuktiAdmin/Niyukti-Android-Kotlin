@@ -10,6 +10,7 @@
         android:id="@+id/bomb_barded"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/navigation_white"
         app:cardCornerRadius="0dp"
         app:cardElevation="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,17 +25,20 @@
             android:padding="8dp">
 
             <ImageView
+                android:id="@+id/about_us_back"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:layout_marginVertical="8dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginStart="8dp"
-                android:id="@+id/about_us_back"
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                app:tint="@color/text_black"
                 app:srcCompat="@drawable/baseline_arrow_back_24" />
 
             <ImageView
                 android:layout_width="22dp"
                 android:layout_height="22dp"
+                app:tint="@color/text_black"
                 app:srcCompat="@drawable/ic_about_us" />
 
 
@@ -44,6 +48,7 @@
                 android:layout_marginHorizontal="8dp"
                 android:layout_weight="1"
                 android:text="About Us"
+                android:textColor="@color/text_black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -53,7 +58,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#ffffff"
+        android:background="@color/background_white"
         android:orientation="vertical"
         android:paddingTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -67,9 +72,9 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
             android:layout_marginBottom="16dp"
-            android:clickable="true"
+            android:clickable="false"
             android:focusable="true"
-            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/navigation_white"
             app:cardCornerRadius="12dp"
             app:cardElevation="2dp">
 
@@ -81,6 +86,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clickable="true"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:padding="16dp">
@@ -89,7 +95,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        app:cardBackgroundColor="#E6EDFF"
+                        app:cardBackgroundColor="@color/about_accent_1"
                         app:cardCornerRadius="12dp"
                         app:cardElevation="0dp">
 
@@ -99,7 +105,7 @@
                             android:layout_gravity="center"
                             android:contentDescription="Send Feedback"
                             app:srcCompat="@drawable/ic_terms_conditions"
-                            app:tint="#000000" />
+                            app:tint="@color/text_black" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -115,7 +121,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Terms &amp; Conditions"
-                            android:textColor="#1A1A1A"
+                            android:textColor="@color/text_black"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -127,13 +133,14 @@
                         android:layout_height="20dp"
                         android:contentDescription="Arrow"
                         app:srcCompat="@drawable/baseline_navigate_next_24"
-                        app:tint="#666666" />
+                        app:tint="@color/text_black" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clickable="true"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:padding="16dp">
@@ -142,7 +149,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        app:cardBackgroundColor="#FFF3E0"
+                        app:cardBackgroundColor="@color/about_accent_2"
                         app:cardCornerRadius="12dp"
                         app:cardElevation="0dp">
 
@@ -152,7 +159,7 @@
                             android:layout_gravity="center"
                             android:contentDescription="Send Feedback"
                             app:srcCompat="@drawable/ic_privacy_policy"
-                            app:tint="#000000" />
+                            app:tint="@color/text_black" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -168,7 +175,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Privacy &amp; Security"
-                            android:textColor="#1A1A1A"
+                            android:textColor="@color/text_black"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -177,7 +184,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
                             android:text="Control your data and security settings"
-                            android:textColor="#666666"
+                            android:textColor="@color/text_black"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -188,13 +195,14 @@
                         android:layout_height="20dp"
                         android:contentDescription="Arrow"
                         app:srcCompat="@drawable/baseline_navigate_next_24"
-                        app:tint="#666666" />
+                        app:tint="@color/text_black" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clickable="true"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
                     android:padding="16dp">
@@ -203,7 +211,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        app:cardBackgroundColor="#E7FFE7"
+                        app:cardBackgroundColor="@color/about_accent_3"
                         app:cardCornerRadius="12dp"
                         app:cardElevation="0dp">
 
@@ -214,7 +222,7 @@
                             android:layout_gravity="center"
                             android:contentDescription="Send Feedback"
                             app:srcCompat="@drawable/ic_help_support"
-                            app:tint="#000000" />
+                            app:tint="@color/text_black" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -231,7 +239,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Help &amp; Support"
-                            android:textColor="#1A1A1A"
+                            android:textColor="@color/text_black"
                             android:textSize="18sp"
                             android:textStyle="bold" />
 
@@ -241,7 +249,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
                             android:text="Get help and contact support"
-                            android:textColor="#666666"
+                            android:textColor="@color/text_black"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -253,7 +261,7 @@
                         android:layout_height="20dp"
                         android:contentDescription="Arrow"
                         app:srcCompat="@drawable/baseline_navigate_next_24"
-                        app:tint="#666666" />
+                        app:tint="@color/text_black" />
 
                 </LinearLayout>
 

@@ -91,11 +91,9 @@ class OtpVerifyActivity : AppCompatActivity() {
 
         scope.launch {
             try {
-                // CORRECT: Use account.createSession(token ID, OTP) to finalize the token exchange.
-                // This is the definitive way to complete token-based authentication (phone, email, magic URL).
                 val session = account.createSession(
-                    userId = currentTokenId, // Must be the Token ID received from createPhoneToken
-                    secret = otp             // Must be the OTP entered by the user
+                    userId = currentTokenId,
+                    secret = otp
                 )
 
                 withContext(Dispatchers.Main) {

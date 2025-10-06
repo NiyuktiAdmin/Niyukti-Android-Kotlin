@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_white"
     tools:context=".course_resources.CourseResourcesActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewalpha"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/navigation_white"
         app:cardCornerRadius="0dp"
         app:cardElevation="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,11 +26,13 @@
             android:padding="8dp">
 
             <ImageView
+                android:id="@+id/course_resources_test_back_btn"
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:layout_margin="8dp"
-                android:id="@+id/course_resources_test_back_btn"
-                app:srcCompat="@drawable/baseline_arrow_back_24" />
+                android:clickable="true"
+                app:srcCompat="@drawable/baseline_arrow_back_24"
+                app:tint="@color/text_black" />
 
 
             <TextView
@@ -37,6 +41,7 @@
                 android:layout_marginHorizontal="8dp"
                 android:layout_weight="1"
                 android:text="Mock Tests"
+                android:textColor="@color/text_black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -46,12 +51,12 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="0dp"
-        android:layout_height="180dp"
+        android:layout_height="220dp"
         android:scaleType="centerCrop"
-        app:srcCompat="@drawable/sample_books_bundle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardViewalpha" />
+        app:layout_constraintTop_toBottomOf="@+id/cardViewalpha"
+        app:srcCompat="@drawable/sample_books_bundle" />
 
     <ScrollView
         android:layout_width="0dp"

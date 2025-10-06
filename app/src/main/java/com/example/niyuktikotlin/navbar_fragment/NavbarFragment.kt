@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import com.example.niyuktikotlin.MainActivity
 import com.example.niyuktikotlin.R
 import com.example.niyuktikotlin.all_courses.AllCoursesListActivity
 import com.example.niyuktikotlin.home_page.HomeActivity
@@ -31,8 +32,8 @@ class NavbarFragment : Fragment() {
         val walletBtn: LinearLayout = view.findViewById(R.id.home_navbar_wallet_btn)
         val exploreBtn: LinearLayout = view.findViewById(R.id.home_navbar_explore_btn)
 
-        homeBtn.setOnClickListener {
-
+        homeBtn.setOnClickListener {v ->
+            goTo(MainActivity::class.java, v)
         }
 
         myCoursesBtn.setOnClickListener {v ->

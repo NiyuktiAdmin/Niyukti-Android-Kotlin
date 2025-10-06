@@ -1,6 +1,7 @@
 package com.example.niyuktikotlin.mock_test_list
 
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +16,7 @@ class MockTestListActivity : AppCompatActivity(), CourseBuyTagAdapter.OnTagSelec
     private lateinit var itemsRv: RecyclerView
 
     private lateinit var courseCategories: Map<String, List<CourseModel>>
+    lateinit var backBtn: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +28,11 @@ class MockTestListActivity : AppCompatActivity(), CourseBuyTagAdapter.OnTagSelec
         loadCourseData()
         setTagsRv()
         setItemsRv()
+
+        backBtn = findViewById(R.id.mock_test_list_activity_menu_btn)
+        backBtn.setOnClickListener {
+            finish()
+        }
     }
 
     private fun loadCourseData() {

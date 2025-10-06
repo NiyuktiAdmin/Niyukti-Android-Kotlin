@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
     tools:context=".mock_test_list.MockTestSubListActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/navigation_white"
         app:cardCornerRadius="0dp"
         app:cardElevation="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,6 +29,8 @@
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:layout_margin="8dp"
+                android:clickable="true"
+                app:tint="@color/text_black"
                 app:srcCompat="@drawable/baseline_arrow_back_24" />
 
 
@@ -38,134 +40,10 @@
                 android:layout_marginHorizontal="8dp"
                 android:layout_weight="1"
                 android:text="Mock Tests"
+                android:textColor="@color/text_black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView6"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="0dp"
-        app:cardElevation="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:orientation="horizontal"
-
-            android:padding="12dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_margin="4dp"
-                    app:srcCompat="@drawable/navbar_home_ic" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Home"
-                    android:textSize="9sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_margin="4dp"
-                    app:srcCompat="@drawable/navbar_mycourse_ic" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="My Course"
-                    android:textSize="9sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_margin="4dp"
-                    app:srcCompat="@drawable/navbar_explore_ic" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Explore"
-                    android:textSize="9sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_margin="4dp"
-                    app:srcCompat="@drawable/navbar_ref_rew_ic" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Refer &amp; earn"
-                    android:textSize="9sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:layout_margin="4dp"
-                    app:srcCompat="@drawable/navbar_wallet_ic" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Wallet"
-                    android:textSize="9sp" />
-
-            </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -195,10 +73,9 @@
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
-        android:padding="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView6"
+        android:background="@color/background_dim"
+        android:padding="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/navbar_fragment_container"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent">
@@ -208,7 +85,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingVertical="8dp"
+            android:paddingStart="8dp">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView8"
@@ -250,6 +129,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="12dp"
                     android:text="$ 2000"
+                    android:textColor="@color/text_dim"
                     android:textSize="14sp" />
 
                 <androidx.cardview.widget.CardView
@@ -262,7 +142,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#FF0000"
+                        android:background="@color/pure_red"
                         android:orientation="horizontal"
                         android:paddingHorizontal="12dp"
                         android:paddingVertical="4dp">
@@ -281,8 +161,8 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Rs 40"
-                android:textColor="#000000"
+                android:text="₹ 1000"
+                android:textColor="@color/text_black"
                 android:textSize="32sp"
                 android:textStyle="bold" />
 
@@ -290,12 +170,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:elevation="0dp"
-                app:cardCornerRadius="18dp">
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#FEF3CD"
+                    android:background="@color/test_limited_time_validity"
                     android:orientation="horizontal"
                     android:paddingHorizontal="0dp"
                     android:paddingVertical="4dp">
@@ -306,7 +187,7 @@
                         android:layout_marginHorizontal="8dp"
                         android:text="Validity: 1Yr"
                         android:textAlignment="center"
-                        android:textColor="#000000"
+                        android:textColor="@color/pure_black"
                         android:textSize="8sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -318,7 +199,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="bottom|center_horizontal"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:paddingVertical="12dp"
+            android:paddingEnd="8dp">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView7"
@@ -330,7 +213,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#000000"
+                    android:background="@color/pure_black"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:paddingHorizontal="30dp"
                     android:paddingVertical="14dp">
@@ -356,5 +240,15 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <fragment
+        android:id="@+id/navbar_fragment_container"
+        android:name="com.example.niyuktikotlin.navbar_fragment.NavbarFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout="@layout/fragment_navbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

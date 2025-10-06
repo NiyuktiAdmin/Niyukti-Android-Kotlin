@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_white"
     tools:context=".menu_pages.SettingsActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/bomb_bard"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/navigation_white"
         app:cardCornerRadius="0dp"
         app:cardElevation="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,13 +30,15 @@
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:layout_marginVertical="8dp"
-                android:layout_marginEnd="16dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:tint="@color/text_black"
                 app:srcCompat="@drawable/baseline_arrow_back_24" />
 
             <ImageView
                 android:layout_width="22dp"
                 android:layout_height="22dp"
+                android:tint="@color/text_black"
                 app:srcCompat="@drawable/ic_settings" />
 
 
@@ -53,7 +57,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#ffffff"
         android:orientation="vertical"
         android:paddingTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -71,6 +74,7 @@
             android:clickable="true"
             android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/navigation_white"
             app:cardCornerRadius="12dp"
             app:cardElevation="2dp">
 
@@ -90,7 +94,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        app:cardBackgroundColor="#E3F2FD"
+                        app:cardBackgroundColor="@color/about_accent_1"
                         app:cardCornerRadius="12dp"
                         app:cardElevation="0dp">
 
@@ -101,7 +105,7 @@
                             android:layout_gravity="center"
                             android:contentDescription="Notifications"
                             app:srcCompat="@drawable/ic_bell"
-                            app:tint="#1E1E1E" />
+                            app:tint="@color/text_black" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -113,7 +117,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_weight="1"
                         android:text="Notifications"
-                        android:textColor="#1A1A1A"
+                        android:textColor="@color/text_black"
                         android:textSize="18sp"
                         android:textStyle="normal" />
 
@@ -141,7 +145,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        app:cardBackgroundColor="#FFF3E0"
+                        app:cardBackgroundColor="@color/about_accent_2"
                         app:cardCornerRadius="12dp"
                         app:cardElevation="0dp">
 
@@ -152,7 +156,7 @@
                             android:layout_gravity="center"
                             android:contentDescription="Send Feedback"
                             app:srcCompat="@drawable/ic_rating"
-                            app:tint="#1E1E1E" />
+                            app:tint="@color/text_black" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -169,7 +173,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Send Feedback"
-                            android:textColor="#1A1A1A"
+                            android:textColor="@color/text_black"
                             android:textSize="18sp"
                             android:textStyle="normal" />
 
@@ -179,7 +183,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
                             android:text="Share your thoughts and suggestions"
-                            android:textColor="#666666"
+                            android:textColor="@color/text_dim"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -191,7 +195,7 @@
                         android:layout_height="20dp"
                         android:contentDescription="Arrow"
                         app:srcCompat="@drawable/baseline_navigate_next_24"
-                        app:tint="#666666" />
+                        app:tint="@color/text_black" />
 
                 </LinearLayout>
 
@@ -206,7 +210,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="48dp"
                         android:layout_height="48dp"
-                        app:cardBackgroundColor="#E8F5E8"
+                        app:cardBackgroundColor="@color/about_accent_3"
                         app:cardCornerRadius="12dp"
                         app:cardElevation="0dp">
 
@@ -218,7 +222,7 @@
                             android:contentDescription="Share App"
                             android:src="@drawable/ic_share"
                             app:srcCompat="@drawable/baseline_share_24"
-                            app:tint="#1E1E1E" />
+                            app:tint="@color/text_black" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -234,7 +238,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Share App"
-                            android:textColor="#1A1A1A"
+                            android:textColor="@color/text_black"
                             android:textSize="18sp"
                             android:textStyle="normal" />
 
@@ -244,7 +248,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
                             android:text="Invite friends to join"
-                            android:textColor="#666666"
+                            android:textColor="@color/text_dim"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -267,6 +271,7 @@
             android:layout_marginHorizontal="16dp"
             android:clickable="true"
             android:focusable="true"
+            app:cardBackgroundColor="@color/navigation_white"
             app:cardCornerRadius="12dp"
             app:cardElevation="2dp">
 
@@ -308,7 +313,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Log Out"
-                        android:textColor="#F44336"
+                        android:textColor="@color/pure_red"
                         android:textSize="18sp"
                         android:textStyle="normal" />
 
@@ -318,7 +323,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:text="Sign out of your account"
-                        android:textColor="#666666"
+                        android:textColor="@color/text_dim"
                         android:textSize="14sp" />
 
                 </LinearLayout>

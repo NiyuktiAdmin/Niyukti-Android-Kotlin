@@ -15,6 +15,9 @@
         android:theme="@style/Theme.NiyuktiKotlin"
         tools:targetApi="31">
         <activity
+            android:name=".my_performance.MyPerformanceActivity"
+            android:exported="false" />
+        <activity
             android:name=".how_to_use.HowToUseActivity"
             android:exported="false" />
         <activity

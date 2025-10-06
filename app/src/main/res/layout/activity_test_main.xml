@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/background_white"
     tools:context=".test_conducting.TestMainActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardViewAlpho"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/navigation_white"
         app:cardCornerRadius="0dp"
         app:cardElevation="18dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,12 +30,15 @@
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:layout_margin="8dp"
+                android:clickable="true"
+                android:tint="@color/text_black"
                 app:srcCompat="@drawable/baseline_arrow_back_24" />
 
             <ImageView
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:layout_margin="8dp"
+                android:tint="@color/text_black"
                 app:srcCompat="@drawable/baseline_alarm_24" />
 
 
@@ -45,6 +49,7 @@
                 android:layout_marginHorizontal="8dp"
                 android:layout_weight="1"
                 android:text="00:45:22"
+                android:textColor="@color/text_black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -53,6 +58,8 @@
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:layout_margin="8dp"
+                android:clickable="true"
+                android:tint="@color/text_black"
                 app:srcCompat="@drawable/baseline_info_24" />
 
             <ImageView
@@ -60,6 +67,8 @@
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:layout_margin="8dp"
+                android:clickable="true"
+                android:tint="@color/text_black"
                 app:srcCompat="@drawable/ic_menu_2" />
 
 
@@ -70,7 +79,9 @@
         android:id="@+id/test_main_subject_rv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardViewAlpho" />
@@ -79,6 +90,8 @@
         android:id="@+id/constraintLayout2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@color/background_dim"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/test_main_subject_rv">
@@ -87,8 +100,8 @@
             android:id="@+id/cardViewhalo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
             android:layout_marginVertical="12dp"
+            android:layout_marginStart="16dp"
             app:cardCornerRadius="100dp"
             app:cardElevation="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -158,8 +171,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="4dp"
-                    android:background="#CCCCCC"
-                    android:text="00:17" />
+                    android:text="00:17"
+                    android:textColor="@color/pure_black" />
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -190,7 +203,9 @@
             android:layout_height="38dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/bgrd_border"
+            android:clickable="true"
             android:padding="8dp"
+            android:tint="@color/text_black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -223,15 +238,16 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
+        tools:listitem="@layout/card_component_test_question" />
 
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:background="@color/background_dim"
         android:gravity="center"
         android:orientation="horizontal"
-        android:background="#E6E6E6"
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -248,22 +264,24 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:rotation="180"
+                android:tint="@color/text_black"
                 app:srcCompat="@drawable/baseline_navigate_next_24" />
 
             <TextView
                 android:id="@+id/tvPrevious"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:paddingStart="8dp"
                 android:text="Previous"
-                android:textColor="@android:color/black"
+                android:textColor="@color/text_black"
                 android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
 
         <LinearLayout
             android:id="@+id/test_main_next_q_btn"
@@ -276,14 +294,16 @@
                 android:id="@+id/tvNext"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:clickable="true"
                 android:paddingStart="8dp"
                 android:text="Next"
-                android:textColor="@android:color/black"
+                android:textColor="@color/text_black"
                 android:textSize="16sp" />
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
+                android:tint="@color/text_black"
                 app:srcCompat="@drawable/baseline_navigate_next_24" />
         </LinearLayout>
     </LinearLayout>

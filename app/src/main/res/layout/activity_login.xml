@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFDD"
+    android:background="@color/background_white"
     tools:context=".login.LoginActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -25,7 +25,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="-20dp"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="@color/navigation_white"
         app:cardCornerRadius="28dp"
         app:cardElevation="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="24dp"
                 android:text="Login To Continue"
-                android:textColor="@android:color/black"
+                android:textColor="@color/text_black"
                 android:textSize="28sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -69,6 +69,7 @@
                     android:id="@+id/login_activity_google"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
+                    android:clickable="true"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="0dp">
 
@@ -90,7 +91,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Continue with Google"
-                            android:textColor="#424242"
+                            android:textColor="@color/text_black"
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -103,7 +104,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:layout_marginTop="16dp"
-                    app:cardBackgroundColor="#FDD835"
+                    android:clickable="true"
+                    app:cardBackgroundColor="@color/login_gold"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="0dp">
 
@@ -124,7 +126,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Continue with Mobile"
-                            android:textColor="@android:color/black"
+                            android:textColor="@color/text_black"
                             android:textSize="16sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -142,6 +144,7 @@
                 android:layout_marginBottom="24dp"
                 android:gravity="center"
                 android:text="By continuing, you agree to our Terms &amp; Conditions and Privacy Policy"
+                android:textColor="@color/text_dim"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/buttons_layout"

@@ -1,7 +1,9 @@
 package com.example.niyuktikotlin.all_courses
 
+import android.media.Image
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.niyuktikotlin.R
@@ -16,6 +18,7 @@ open class AllCoursesListActivity : AppCompatActivity(), CourseBuyTagAdapter.OnT
     private lateinit var tagsRv: RecyclerView
     private lateinit var itemsRv: RecyclerView
 
+    lateinit var backBtn: ImageView
     private lateinit var courseCategories: Map<String, List<CourseModel>>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,10 +27,15 @@ open class AllCoursesListActivity : AppCompatActivity(), CourseBuyTagAdapter.OnT
 
         itemsRv = findViewById(R.id.all_courses_list_activity_items_rv)
         tagsRv = findViewById(R.id.all_courses_list_activity_tags_rv)
+        backBtn = findViewById(R.id.all_courses_list_activity_back_btn)
 
         loadCourseData()
         setTagsRv()
         setItemsRv()
+
+        backBtn.setOnClickListener {
+            finish()
+        }
     }
 
     private fun loadCourseData() {
