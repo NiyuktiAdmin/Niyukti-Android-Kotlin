@@ -30,7 +30,7 @@
                 android:layout_height="26dp"
                 android:layout_margin="8dp"
                 android:clickable="true"
-                android:tint="@color/text_black"
+                app:tint="@color/text_black"
                 app:srcCompat="@drawable/baseline_arrow_back_24" />
 
 

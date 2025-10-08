@@ -7,7 +7,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -21,15 +20,16 @@ import com.example.niyuktikotlin.R
 import com.example.niyuktikotlin.all_courses.AllCoursesListActivity
 import com.example.niyuktikotlin.free_material_tests.FreeMaterialTestActivity
 import com.example.niyuktikotlin.menu_fragment.FragmentMainMenu
-import com.example.niyuktikotlin.referals.ReferRewardsActivity
 import com.example.niyuktikotlin.subject_wise_course.SubjectWiseCourseListActivity
 import com.example.niyuktikotlin.util.CourseBuyAdapter
 import com.example.niyuktikotlin.models.CourseModel
 import com.example.niyuktikotlin.my_performance.MyPerformanceActivity
-import com.example.niyuktikotlin.wallet.WalletActivity
 import io.appwrite.Client
+import io.appwrite.Query
 import io.appwrite.exceptions.AppwriteException
 import io.appwrite.services.Account
+import io.appwrite.services.Databases
+import io.appwrite.services.Storage
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -83,8 +83,7 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        client = Client(this, "https://fra.cloud.appwrite.io/v1")
-            .setProject(getString(R.string.APPWRITE_PROJECT_ID))
+        client = Client(this, "https://fra.cloud.appwrite.io/v1").setProject(getString(R.string.APPWRITE_PROJECT_ID))
         account = Account(client)
 
         initialiseVariables()
@@ -128,7 +127,6 @@ class HomeActivity : AppCompatActivity() {
         setConstableRv(listOfItems)
         setRecentlyAddedRv(listOfItems)
         setPackagesRv(listOfItems)
-
 
         fetchUserName()
         referralCode.text = myRefCode
@@ -258,7 +256,7 @@ class HomeActivity : AppCompatActivity() {
         scope.launch {
             try {
                 val user = account.get()
-                val userName = if (user.name.isNullOrEmpty() || user.name == user.id) {
+                val userName = if (user.name.isEmpty() || user.name == user.id) {
                     // Todo : Fallback if the name is not set (e.g., if only phone was used)
                     "User"
                 } else {

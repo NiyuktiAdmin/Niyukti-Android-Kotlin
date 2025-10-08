@@ -64,7 +64,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:contentDescription="Arrow Icon"
-                android:tint="@color/text_black"
+                app:tint="@color/text_black"
                 app:srcCompat="@drawable/baseline_navigate_next_24" />
         </LinearLayout>
     </LinearLayout>

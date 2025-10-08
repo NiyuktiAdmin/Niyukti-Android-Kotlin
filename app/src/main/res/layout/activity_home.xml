@@ -182,15 +182,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="20dp"
                             android:layout_marginBottom="4dp"
-                            app:tint="@color/text_white"
-                            app:srcCompat="@drawable/ic_all_courses" />
+                            app:srcCompat="@drawable/ic_all_courses"
+                            app:tint="@color/pure_black" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="All Courses"
                             android:textAlignment="center"
-                            android:textColor="@color/text_white"
+                            android:textColor="@color/pure_black"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -219,15 +219,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="20dp"
                             android:layout_marginBottom="4dp"
-                            app:tint="@color/text_white"
-                            app:srcCompat="@drawable/ic_subj_course" />
+                            app:srcCompat="@drawable/ic_subj_course"
+                            app:tint="@color/pure_black" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Subject Course"
                             android:textAlignment="center"
-                            android:textColor="@color/text_white"
+                            android:textColor="@color/pure_black"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -256,15 +256,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="20dp"
                             android:layout_marginBottom="4dp"
-                            app:tint="@color/text_white"
-                            app:srcCompat="@drawable/ic_mock_test" />
+                            app:srcCompat="@drawable/ic_mock_test"
+                            app:tint="@color/pure_black" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Mock Test"
                             android:textAlignment="center"
-                            android:textColor="@color/text_white"
+                            android:textColor="@color/pure_black"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -301,15 +301,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="22dp"
                             android:layout_marginBottom="4dp"
-                            app:tint="@color/text_white"
-                            app:srcCompat="@drawable/ic_free_material" />
+                            app:srcCompat="@drawable/ic_free_material"
+                            app:tint="@color/pure_black" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Free Material"
                             android:textAlignment="center"
-                            android:textColor="@color/text_white"
+                            android:textColor="@color/pure_black"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -338,15 +338,15 @@
                             android:layout_width="match_parent"
                             android:layout_height="20dp"
                             android:layout_marginBottom="4dp"
-                            app:tint="@color/text_white"
-                            app:srcCompat="@drawable/ic_bot" />
+                            app:srcCompat="@drawable/ic_bot"
+                            app:tint="@color/pure_black" />
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="Niyukti Chatbot"
                             android:textAlignment="center"
-                            android:textColor="@color/text_white"
+                            android:textColor="@color/pure_black"
                             android:textStyle="bold" />
 
                     </LinearLayout>
@@ -375,8 +375,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="22dp"
                             android:layout_marginBottom="4dp"
-                            app:tint="@color/text_white"
-                            app:srcCompat="@drawable/ic_my_performance" />
+                            app:srcCompat="@drawable/ic_my_performance"
+                            app:tint="@color/pure_black" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -384,7 +384,7 @@
                             android:lines="2"
                             android:text="My Performance"
                             android:textAlignment="center"
-                            android:textColor="@color/text_white"
+                            android:textColor="@color/pure_black"
                             android:textStyle="bold" />
 
                     </LinearLayout>

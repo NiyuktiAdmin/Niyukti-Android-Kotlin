@@ -19,7 +19,7 @@ class RecentReferalsAdapter : RecyclerView.Adapter<RecentReferalsAdapter.ViewHol
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if (position % 3 == 0) {
             holder.status.text = "success"
-            holder.status.setBackgroundColor(Color.GREEN)
+            holder.status.setBackgroundColor(holder.itemView.context.getColor(R.color.selected_option_background))
         }
     }
 

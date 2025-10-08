@@ -31,14 +31,14 @@
                 android:layout_height="26dp"
                 android:layout_margin="8dp"
                 android:clickable="true"
-                android:tint="@color/text_black"
+                app:tint="@color/text_black"
                 app:srcCompat="@drawable/baseline_arrow_back_24" />
 
             <ImageView
                 android:layout_width="26dp"
                 android:layout_height="26dp"
                 android:layout_margin="8dp"
-                android:tint="@color/text_black"
+                app:tint="@color/text_black"
                 app:srcCompat="@drawable/baseline_alarm_24" />
 
 
@@ -59,7 +59,7 @@
                 android:layout_height="26dp"
                 android:layout_margin="8dp"
                 android:clickable="true"
-                android:tint="@color/text_black"
+                app:tint="@color/text_black"
                 app:srcCompat="@drawable/baseline_info_24" />
 
             <ImageView
@@ -68,7 +68,7 @@
                 android:layout_height="26dp"
                 android:layout_margin="8dp"
                 android:clickable="true"
-                android:tint="@color/text_black"
+                app:tint="@color/text_black"
                 app:srcCompat="@drawable/ic_menu_2" />
 
 
@@ -205,7 +205,7 @@
             android:background="@drawable/bgrd_border"
             android:clickable="true"
             android:padding="8dp"
-            android:tint="@color/text_black"
+            app:tint="@color/text_black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -264,7 +264,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:rotation="180"
-                android:tint="@color/text_black"
+                app:tint="@color/text_black"
                 app:srcCompat="@drawable/baseline_navigate_next_24" />
 
             <TextView
@@ -303,7 +303,7 @@
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:tint="@color/text_black"
+                app:tint="@color/text_black"
                 app:srcCompat="@drawable/baseline_navigate_next_24" />
         </LinearLayout>
     </LinearLayout>

@@ -1,9 +1,17 @@
 <resources>
     <string name="app_name">Niyukti</string>
-    <string name="category_prompt">Select Category</string>
 
+    <!-- =============== APPWRITE IDs =============== -->
     <string name="APPWRITE_PROJECT_ID">68511ac1000c3bac6acc</string>
     <string name="APPWRITE_PROJECT_NAME">Niyukti DB</string>
+    <string name="FETCH_FUNCTION_ID">68ade509001f24d308c9</string>
+    <string name="REGISTER_GOOGLE_FUNCTION_ID">68dfa53b0010d402f6e2</string>
+    <string name="REGISTER_PHONE_FUNCTION_ID">68dfaa13000c563c85f0</string>
+    <string name="DATABASE_ID">68511f1f00196ce07f7e</string>
+
+    <!-- =============== DROP DOWN =============== -->
+    <string name="category_prompt">Select Category</string>
+
     <string-array name="category_options">
         <item>Select</item>
         <item>General</item>

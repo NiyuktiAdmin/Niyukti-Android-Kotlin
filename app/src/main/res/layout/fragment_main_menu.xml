@@ -93,7 +93,7 @@
                         android:clickable="true"
                         android:contentDescription="Copy"
                         android:focusable="true"
-                        android:tint="@color/text_black"
+                        app:tint="@color/text_black"
                         app:srcCompat="@drawable/baseline_content_copy_24" />
 
                     <ImageView
@@ -104,7 +104,7 @@
                         android:contentDescription="Share"
                         android:focusable="true"
                         android:src="@drawable/ic_share"
-                        android:tint="@color/text_black" />
+                        app:tint="@color/text_black" />
 
                 </LinearLayout>
 
@@ -135,7 +135,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Chatbox"
-                    android:tint="@color/text_black"
+                    app:tint="@color/text_black"
                     app:srcCompat="@drawable/ic_bot" />
 
                 <TextView
@@ -165,7 +165,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Free Material"
-                    android:tint="@color/text_black"
+                    app:tint="@color/text_black"
                     app:srcCompat="@drawable/ic_free_material" />
 
                 <TextView
@@ -195,7 +195,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Old Papers"
-                    android:tint="@color/text_black"
+                    app:tint="@color/text_black"
                     app:srcCompat="@drawable/ic_old_papers" />
 
                 <TextView
@@ -225,7 +225,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Revision PDF"
-                    android:tint="@color/text_black"
+                    app:tint="@color/text_black"
                     app:srcCompat="@drawable/ic_subj_course" />
 
                 <TextView
@@ -261,7 +261,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Explore"
-                    android:tint="@color/text_black"
+                    app:tint="@color/text_black"
                     app:srcCompat="@drawable/navbar_explore_ic" />
 
                 <TextView
@@ -291,7 +291,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="My course"
-                    android:tint="@color/text_black"
+                    app:tint="@color/text_black"
                     app:srcCompat="@drawable/navbar_mycourse_ic" />
 
                 <TextView
@@ -321,7 +321,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Download"
-                    android:tint="@color/text_black"
+                    app:tint="@color/text_black"
                     app:srcCompat="@drawable/ic_download" />
 
                 <TextView
@@ -351,7 +351,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Rate Us"
-                    android:tint="@color/text_black"
+                    app:tint="@color/text_black"
                     app:srcCompat="@drawable/ic_rating" />
 
                 <TextView
@@ -387,7 +387,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Refer &amp; Earn"
-                    android:tint="@color/text_black"
+                    app:tint="@color/text_black"
                     app:srcCompat="@drawable/navbar_ref_rew_ic" />
 
                 <TextView
@@ -417,7 +417,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="My Wallet"
-                    android:tint="@color/text_black"
+                    app:tint="@color/text_black"
                     app:srcCompat="@drawable/navbar_wallet_ic" />
 
                 <TextView
@@ -447,7 +447,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="How to Use Everything"
-                    android:tint="@color/text_black"
+                    app:tint="@color/text_black"
                     app:srcCompat="@drawable/ic_how_to_use" />
 
                 <TextView
@@ -483,7 +483,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="Setting"
-                    android:tint="@color/text_black"
+                    app:tint="@color/text_black"
                     app:srcCompat="@drawable/ic_settings" />
 
                 <TextView
@@ -501,7 +501,7 @@
                     android:layout_width="20dp"
                     android:layout_height="24dp"
                     android:contentDescription="Arrow"
-                    android:tint="@color/text_black"
+                    app:tint="@color/text_black"
                     app:srcCompat="@drawable/baseline_navigate_next_24" />
 
             </LinearLayout>
@@ -522,7 +522,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:contentDescription="About us"
-                    android:tint="@color/text_black"
+                    app:tint="@color/text_black"
                     app:srcCompat="@drawable/ic_about_us" />
 
                 <TextView
@@ -540,7 +540,7 @@
                     android:layout_width="20dp"
                     android:layout_height="24dp"
                     android:contentDescription="Arrow"
-                    android:tint="@color/text_black"
+                    app:tint="@color/text_black"
                     app:srcCompat="@drawable/baseline_navigate_next_24" />
 
             </LinearLayout>

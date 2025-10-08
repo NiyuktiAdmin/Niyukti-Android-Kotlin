@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:paddingVertical="12dp"
     android:paddingHorizontal="16dp">
@@ -31,18 +32,25 @@
         android:textSize="14sp" />
 
     <!-- Status -->
-    <TextView
-        android:id="@+id/recent_referral_status"
+    <androidx.cardview.widget.CardView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="@color/pure_red"
-        android:gravity="center"
-        android:paddingVertical="2dp"
-        android:text="Pending"
-        android:textColor="@color/text_white"
-        android:textSize="14sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/recent_referral_status"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAlignment="center"
+            android:background="@color/pure_red"
+            android:paddingVertical="2dp"
+            android:text="Pending"
+            android:textColor="@color/pure_white"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
 
     <!-- Reward -->
     <TextView

@@ -31,7 +31,7 @@
                 android:layout_height="24dp"
                 android:clickable="true"
                 android:contentDescription="Back"
-                android:tint="@color/text_black"
+                app:tint="@color/text_black"
                 app:srcCompat="@drawable/baseline_arrow_back_24" />
 
             <TextView
@@ -50,7 +50,6 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:contentDescription="Timer Icon"
-                android:tint="@color/text_black"
                 app:srcCompat="@drawable/baseline_alarm_24"
                 app:tint="@color/text_black" />
 

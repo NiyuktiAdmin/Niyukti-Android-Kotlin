@@ -62,7 +62,6 @@
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:contentDescription="Questions"
-                        android:tint="@color/text_black"
                         app:srcCompat="@drawable/think_ic"
                         app:tint="@color/text_black" />
 
@@ -87,7 +86,7 @@
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:contentDescription="Duration"
-                        android:tint="@color/text_black"
+                        app:tint="@color/text_black"
                         app:srcCompat="@drawable/baseline_alarm_24" />
 
                     <TextView
@@ -111,7 +110,7 @@
                         android:layout_width="28dp"
                         android:layout_height="28dp"
                         android:contentDescription="Marks"
-                        android:tint="@color/text_black"
+                        app:tint="@color/text_black"
                         app:srcCompat="@drawable/baseline_star_outline_24" />
 
                     <TextView

@@ -14,17 +14,14 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
 import com.example.niyuktikotlin.R
 import com.example.niyuktikotlin.home_page.HomeActivity
-import com.example.niyuktikotlin.util.FunctionIds
 import io.appwrite.Client
 import io.appwrite.exceptions.AppwriteException
-import io.appwrite.models.User
 import io.appwrite.services.Account
 import io.appwrite.services.Functions
 import io.appwrite.enums.OAuthProvider
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import org.json.JSONObject
 
 class LoginActivity : AppCompatActivity() {
 
