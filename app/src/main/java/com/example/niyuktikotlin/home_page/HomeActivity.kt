@@ -29,14 +29,13 @@ import io.appwrite.Query
 import io.appwrite.exceptions.AppwriteException
 import io.appwrite.services.Account
 import io.appwrite.services.Databases
-import io.appwrite.services.Storage
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import org.json.JSONObject
 
 class HomeActivity : AppCompatActivity() {
-
     private lateinit var welcomeName: TextView
     private lateinit var referralCode: TextView
     private lateinit var referCodeCopy: ImageView
@@ -62,9 +61,11 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var offerAdapter: HomePageOfferAdapter
 
     private val myRefCode = "Niyukti1"
+    private var currentUserId: String? = null
 
     private lateinit var client: Client
     private lateinit var account: Account
+    private lateinit var databases: Databases
     private val scope = CoroutineScope(Dispatchers.IO)
 
     private val autoScrollRunnable = object : Runnable {
@@ -85,52 +86,20 @@ class HomeActivity : AppCompatActivity() {
 
         client = Client(this, "https://fra.cloud.appwrite.io/v1").setProject(getString(R.string.APPWRITE_PROJECT_ID))
         account = Account(client)
+        databases = Databases(client)
 
         initialiseVariables()
-
-        val listOfItems = listOf(
-            CourseModel(
-                title = "Current Affairs 2025",
-                actualPrice = 799,
-                discountedPrice = 499,
-                discountPercent = 38,
-                imageResId = R.drawable.course4,
-                category = "General Knowledge"
-            ),
-            CourseModel(
-                title = "Constable Foundation Course",
-                actualPrice = 1499,
-                discountedPrice = 999,
-                discountPercent = 33,
-                imageResId = R.drawable.offer1,
-                category = "Police Exam"
-            ),
-            CourseModel(
-                title = "Reasoning Mastery",
-                actualPrice = 999,
-                discountedPrice = 699,
-                discountPercent = 30,
-                imageResId = R.drawable.offer3,
-                category = "Aptitude"
-            ),
-            CourseModel(
-                title = "Maths Booster",
-                actualPrice = 1099,
-                discountedPrice = 799,
-                discountPercent = 27,
-                imageResId = R.drawable.sample_home_offer,
-                category = "Quantitative Aptitude"
-            )
-        )
+        Toast.makeText(this@HomeActivity, "initialise Vars", Toast.LENGTH_SHORT).show()
 
         setOfferRv()
-        setConstableRv(listOfItems)
-        setRecentlyAddedRv(listOfItems)
-        setPackagesRv(listOfItems)
+        Toast.makeText(this@HomeActivity, "Offer RV", Toast.LENGTH_SHORT).show()
 
-        fetchUserName()
+        fetchUserName { userId ->
+            currentUserId = userId
+            fetchAllCoursesAndSetRVs(userId)
+        }
+
         referralCode.text = myRefCode
-
         setCardButtons()
 
         referCodeCopy.setOnClickListener {
@@ -140,6 +109,84 @@ class HomeActivity : AppCompatActivity() {
             Toast.makeText(this, "Copied to clipboard", Toast.LENGTH_SHORT).show()
         }
     }
+
+    private fun fetchAllCoursesAndSetRVs(userId: String?) {
+        Toast.makeText(this@HomeActivity, "All courses . set RV -", Toast.LENGTH_SHORT).show()
+        scope.launch {
+            try {
+                val allCourses = fetchAllCoursesForDisplay(userId)
+
+                val recentlyAddedCourses = allCourses.filter { it.tags.contains("recent") }
+                val constableCourses = allCourses.filter { it.tags.contains("constable") }
+                val packagesCourses = allCourses.filter { it.tags.contains("packages") }
+
+                withContext(Dispatchers.Main) {
+                    setRecentlyAddedRv(recentlyAddedCourses)
+                    setConstableRv(constableCourses)
+                    setPackagesRv(packagesCourses)
+                }
+            } catch (e: AppwriteException) {
+                e.printStackTrace()
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(this@HomeActivity, "Failed to load courses: ${e.message}", Toast.LENGTH_LONG).show()
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+                // do nth.
+            }
+        }
+    }
+
+    private suspend fun fetchAllCoursesForDisplay(userId: String?): List<CourseModel> {
+        val queries = mutableListOf<String>()
+
+        // Add a limit for efficiency (e.g., fetch up to 100 courses)
+        queries.add(Query.limit(100))
+
+        // Optionally, sort by $createdAt to ensure "recent" courses are included first
+        queries.add(Query.orderDesc("\$createdAt"))
+
+        val response = databases.listDocuments(
+            databaseId = getString(R.string.DATABASE_ID),
+            collectionId = getString(R.string.COURSES_COLLECTION_ID),
+            queries = queries
+        )
+
+        val courses = mutableListOf<CourseModel>()
+
+        response.documents.forEach { document ->
+            val data = document.data
+
+            if (userId != null) {
+                val purchasedByList = data["purchasedBy"] as? List<String> ?: emptyList()
+                if (purchasedByList.contains(userId)) {
+                    return@forEach
+                }
+            }
+
+            val finalPrice = (data["price"] as? Number)?.toInt() ?: 0
+            val actualPrice = (data["PrevPrice"] as? Number)?.toInt() ?: 0
+            val title = data["title"] as? String ?: "No Title"
+
+            val tagsList = data["tags"] as? List<String> ?: emptyList()
+
+            val discountPercent = if (actualPrice > 0) ((actualPrice - finalPrice) * 100 / actualPrice) else 0
+
+            courses.add(
+                CourseModel(
+                    title = title,
+                    actualPrice = actualPrice,
+                    discountedPrice = finalPrice,
+                    discountPercent = discountPercent,
+                    imageResId = R.drawable.course4,
+                    category = tagsList.firstOrNull()?.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() } ?: "General",
+                    tags = tagsList
+                )
+            )
+        }
+        return courses
+    }
+
 
     private fun setCardButtons() {
         mockTestCard.setOnClickListener { goTo(MockTestListActivity::class.java) }
@@ -252,12 +299,14 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    private fun fetchUserName() {
+    private fun fetchUserName(onUserFetched: (String?) -> Unit) {
+        Toast.makeText(this@HomeActivity, "Fetch username -", Toast.LENGTH_SHORT).show()
         scope.launch {
+            var userId: String? = null
             try {
                 val user = account.get()
+                userId = user.id
                 val userName = if (user.name.isEmpty() || user.name == user.id) {
-                    // Todo : Fallback if the name is not set (e.g., if only phone was used)
                     "User"
                 } else {
                     user.name
@@ -273,6 +322,10 @@ class HomeActivity : AppCompatActivity() {
                 }
             } catch (e: Exception) {
                 // do nth.
+            } finally {
+                withContext(Dispatchers.Main) {
+                    onUserFetched(userId)
+                }
             }
         }
     }

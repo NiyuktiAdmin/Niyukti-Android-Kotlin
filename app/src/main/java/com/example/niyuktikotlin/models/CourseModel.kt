@@ -6,5 +6,6 @@ data class CourseModel(
     val discountedPrice: Int,
     val discountPercent: Int,
     val imageResId: Int,
-    val category: String
+    val category: String,
+    val tags: List<String> = emptyList()
 )

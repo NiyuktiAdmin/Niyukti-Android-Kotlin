@@ -4,10 +4,27 @@
     <!-- =============== APPWRITE IDs =============== -->
     <string name="APPWRITE_PROJECT_ID">68511ac1000c3bac6acc</string>
     <string name="APPWRITE_PROJECT_NAME">Niyukti DB</string>
+    <string name="APPWRITE_ENDPOINT">https://fra.cloud.appwrite.io/v1</string>
+    <string name="DATABASE_ID">68511f1f00196ce07f7e</string>
+
     <string name="FETCH_FUNCTION_ID">68ade509001f24d308c9</string>
     <string name="REGISTER_GOOGLE_FUNCTION_ID">68dfa53b0010d402f6e2</string>
     <string name="REGISTER_PHONE_FUNCTION_ID">68dfaa13000c563c85f0</string>
-    <string name="DATABASE_ID">68511f1f00196ce07f7e</string>
+
+    <string name="USER_COLLECTION_ID">users</string>
+    <string name="COURSES_COLLECTION_ID">courses</string>
+    <string name="MATERIALS_COLLECTION_ID">materials</string>
+    <string name="SYLLABUS_COLLECTION_ID">syllabus</string>
+    <string name="TOPICS_COLLECTION_ID">topics</string>
+    <string name="COUPON_CODES_COLLECTION_ID">couponCodes</string>
+    <string name="OFFERS_BANNERS_COLLECTION_ID">offersBanners</string>
+    <string name="LOGIN_PAGE_IMAGES_COLLECTION_ID">loginPageImages</string>
+    <string name="QUIZ_ATTEMPTS_COLLECTION_ID">quizAttempts</string>
+    <string name="QUESTIONS_COLLECTION_ID">questions</string>
+    <string name="QUIZZES_COLLECTION_ID">quizzes</string>
+    <string name="PURCHASES_COLLECTION_ID">purchases</string>
+    <string name="WALLETS_COLLECTION_ID">wallets</string>
+    <string name="REFERRALS_COLLECTION_ID">referrals</string>
 
     <!-- =============== DROP DOWN =============== -->
     <string name="category_prompt">Select Category</string>
@@ -28,6 +45,4 @@
         <item>Accuracy</item>
         <item>Time Taken</item>
     </string-array>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
