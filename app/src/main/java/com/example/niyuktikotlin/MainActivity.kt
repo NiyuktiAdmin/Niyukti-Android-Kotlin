@@ -8,10 +8,10 @@ import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.niyuktikotlin.util.HallOfFameAdapter
 import com.example.niyuktikotlin.util.StudentReviewAdapter
-import com.example.niyuktikotlin.home_page.HomePageOfferAdapter
 import com.example.niyuktikotlin.menu_fragment.FragmentMainMenu
 import com.example.niyuktikotlin.models.HallOfFameModel
 import com.example.niyuktikotlin.models.StudentReviewModel
+import com.example.niyuktikotlin.util.SimpleImageAdapter
 
 class MainActivity : AppCompatActivity() {
     lateinit var navigationMenuBtn: ImageView
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             R.drawable.offer2,
             R.drawable.course4
         )
-        val adapter = HomePageOfferAdapter(offerImages)
+        val adapter = SimpleImageAdapter(offerImages)
         setupHorizontalRecyclerView(recyclerView, adapter)
     }
 
@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
             R.drawable.test_performance,
             R.drawable.ref_earning_temp
         )
-        val adapter = HomePageOfferAdapter(offerImages)
+        val adapter = SimpleImageAdapter(offerImages)
         setupHorizontalRecyclerView(recyclerView, adapter)
     }
 

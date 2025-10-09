@@ -18,12 +18,13 @@ import androidx.recyclerview.widget.SnapHelper
 import com.example.niyuktikotlin.mock_test_list.MockTestListActivity
 import com.example.niyuktikotlin.R
 import com.example.niyuktikotlin.all_courses.AllCoursesListActivity
+import com.example.niyuktikotlin.all_courses.CourseFoldersActivity
 import com.example.niyuktikotlin.free_material_tests.FreeMaterialTestActivity
 import com.example.niyuktikotlin.menu_fragment.FragmentMainMenu
-import com.example.niyuktikotlin.subject_wise_course.SubjectWiseCourseListActivity
 import com.example.niyuktikotlin.util.CourseBuyAdapter
 import com.example.niyuktikotlin.models.CourseModel
 import com.example.niyuktikotlin.my_performance.MyPerformanceActivity
+import com.example.niyuktikotlin.util.SimpleImageAdapter
 import io.appwrite.Client
 import io.appwrite.Query
 import io.appwrite.exceptions.AppwriteException
@@ -58,7 +59,7 @@ class HomeActivity : AppCompatActivity() {
     private val handler = Handler()
     private var currentCardIndex = 0
     private val AUTO_SCROLL_DELAY: Long = 3000
-    private lateinit var offerAdapter: HomePageOfferAdapter
+    private lateinit var offerAdapter: SimpleImageAdapter
 
     private val myRefCode = "Niyukti1"
     private var currentUserId: String? = null
@@ -70,7 +71,8 @@ class HomeActivity : AppCompatActivity() {
 
     private val autoScrollRunnable = object : Runnable {
         override fun run() {
-            currentCardIndex = (currentCardIndex + 1) % 3
+//            TODO : need to change the number of items in offer rv here
+            currentCardIndex = (currentCardIndex + 1) % 3 // 3 = current number of offers
             offerRv.smoothScrollToPosition(currentCardIndex)
             handler.postDelayed(this, AUTO_SCROLL_DELAY)
         }
@@ -84,15 +86,13 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-        client = Client(this, "https://fra.cloud.appwrite.io/v1").setProject(getString(R.string.APPWRITE_PROJECT_ID))
+        client = Client(this, getString(R.string.APPWRITE_ENDPOINT)).setProject(getString(R.string.APPWRITE_PROJECT_ID))
         account = Account(client)
         databases = Databases(client)
 
         initialiseVariables()
-        Toast.makeText(this@HomeActivity, "initialise Vars", Toast.LENGTH_SHORT).show()
 
         setOfferRv()
-        Toast.makeText(this@HomeActivity, "Offer RV", Toast.LENGTH_SHORT).show()
 
         fetchUserName { userId ->
             currentUserId = userId
@@ -111,7 +111,6 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun fetchAllCoursesAndSetRVs(userId: String?) {
-        Toast.makeText(this@HomeActivity, "All courses . set RV -", Toast.LENGTH_SHORT).show()
         scope.launch {
             try {
                 val allCourses = fetchAllCoursesForDisplay(userId)
@@ -167,46 +166,47 @@ class HomeActivity : AppCompatActivity() {
             val finalPrice = (data["price"] as? Number)?.toInt() ?: 0
             val actualPrice = (data["PrevPrice"] as? Number)?.toInt() ?: 0
             val title = data["title"] as? String ?: "No Title"
-
             val tagsList = data["tags"] as? List<String> ?: emptyList()
-
+            val desc = data["description"] as? String ?: "No Description"
+            val isActive = data["isActive"] as? Boolean ?: false
             val discountPercent = if (actualPrice > 0) ((actualPrice - finalPrice) * 100 / actualPrice) else 0
+            val syllabusIds = data["syllabusId"] as? List<String> ?: emptyList()
+            val testsIds = data["testsId"] as? List<String> ?: emptyList()
+            val plansIds = data["plansId"] as? List<String> ?: emptyList()
 
             courses.add(
                 CourseModel(
-                    title = title,
-                    actualPrice = actualPrice,
-                    discountedPrice = finalPrice,
-                    discountPercent = discountPercent,
+                    document.id,
+                    title, desc, actualPrice, finalPrice, isActive, discountPercent,
                     imageResId = R.drawable.course4,
                     category = tagsList.firstOrNull()?.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() } ?: "General",
-                    tags = tagsList
+                    tagsList, syllabusIds, testsIds, plansIds
                 )
             )
         }
         return courses
     }
 
-
     private fun setCardButtons() {
-        mockTestCard.setOnClickListener { goTo(MockTestListActivity::class.java) }
-        allCoursesCard.setOnClickListener { goTo(AllCoursesListActivity::class.java) }
-        subjectCourseCard.setOnClickListener { goTo(SubjectWiseCourseListActivity::class.java) }
+        mockTestCard.setOnClickListener { goTo(MockTestListActivity::class.java, "Mock Test") }
+        allCoursesCard.setOnClickListener { goTo(AllCoursesListActivity::class.java, "All Courses") }
+        subjectCourseCard.setOnClickListener { goTo(AllCoursesListActivity::class.java, "Subject wise Courses") }
 
-        freeMaterial.setOnClickListener { goTo(FreeMaterialTestActivity::class.java) }
-        myPerformanceCard.setOnClickListener { goTo(MyPerformanceActivity::class.java) }
+        freeMaterial.setOnClickListener { goTo(FreeMaterialTestActivity::class.java, "Free Material + Test") }
+        myPerformanceCard.setOnClickListener { goTo(MyPerformanceActivity::class.java, "My Performance") }
 
     }
 
-    private fun goTo(activityClass: Class<*>) {
+    private fun goTo(activityClass: Class<*>, title: String) {
         val intent = Intent(this, activityClass)
+        intent.putExtra("pageTitle", title)
         startActivity(intent)
     }
 
     private fun setRecentlyAddedRv(listOfItems : List<CourseModel>) {
         val recentlyAddedLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recentlyAddedRv.layoutManager = recentlyAddedLayoutManager
-        val recentlyAddedAdapter = CourseBuyAdapter(listOfItems)
+        val recentlyAddedAdapter = CourseBuyAdapter(listOfItems, CourseFoldersActivity::class.java, CourseBuyAdapter.ITEM_NAME)
         recentlyAddedRv.adapter = recentlyAddedAdapter
         val snapHelper: SnapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(recentlyAddedRv)
@@ -215,7 +215,7 @@ class HomeActivity : AppCompatActivity() {
     private fun setConstableRv(listOfItems : List<CourseModel>) {
         val constableLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         constableRv.layoutManager = constableLayoutManager
-        val constableAdapter = CourseBuyAdapter(listOfItems)
+        val constableAdapter = CourseBuyAdapter(listOfItems, CourseFoldersActivity::class.java, CourseBuyAdapter.ITEM_NAME)
         constableRv.adapter = constableAdapter
         val snapHelper: SnapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(constableRv)
@@ -224,7 +224,7 @@ class HomeActivity : AppCompatActivity() {
     private fun setPackagesRv(listOfItems : List<CourseModel>) {
         val constableLayoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         packagesRv.layoutManager = constableLayoutManager
-        val packagesAdapter = CourseBuyAdapter(listOfItems)
+        val packagesAdapter = CourseBuyAdapter(listOfItems, CourseFoldersActivity::class.java, CourseBuyAdapter.ITEM_NAME)
         packagesRv.adapter = packagesAdapter
         val snapHelper: SnapHelper = LinearSnapHelper()
         snapHelper.attachToRecyclerView(packagesRv)
@@ -243,7 +243,7 @@ class HomeActivity : AppCompatActivity() {
     private fun setOfferRv() {
         layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         offerRv.layoutManager = layoutManager
-        offerAdapter = HomePageOfferAdapter(
+        offerAdapter = SimpleImageAdapter(
             listOf(
                 R.drawable.offer1,
                 R.drawable.sample_home_offer,
@@ -300,7 +300,6 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun fetchUserName(onUserFetched: (String?) -> Unit) {
-        Toast.makeText(this@HomeActivity, "Fetch username -", Toast.LENGTH_SHORT).show()
         scope.launch {
             var userId: String? = null
             try {

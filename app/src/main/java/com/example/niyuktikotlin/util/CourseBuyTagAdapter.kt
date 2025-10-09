@@ -29,13 +29,22 @@ class CourseBuyTagAdapter (
 
     override fun onBindViewHolder(holder: ViewHolder, @SuppressLint("RecyclerView") position: Int) {
         holder.textView.text = tags[position]
+        var context = holder.itemView.context
 
         if (position == selectedPosition) {
-            holder.textView.setBackgroundColor(Color.BLACK)
-            holder.textView.setTextColor(Color.WHITE)
+            holder.textView.setBackgroundColor(
+                context.getColor(R.color.text_black)
+            )
+            holder.textView.setTextColor(
+                context.getColor(R.color.text_white)
+            )
         } else {
-            holder.textView.setBackgroundColor(Color.LTGRAY)
-            holder.textView.setTextColor(Color.BLACK)
+            holder.textView.setBackgroundColor(
+                context.getColor(R.color.dialog_background)
+            )
+            holder.textView.setTextColor(
+                context.getColor(R.color.text_black)
+            )
         }
 
         holder.textView.setOnClickListener {

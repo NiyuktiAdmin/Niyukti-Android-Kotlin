@@ -32,6 +32,8 @@ class NavbarFragment : Fragment() {
         val walletBtn: LinearLayout = view.findViewById(R.id.home_navbar_wallet_btn)
         val exploreBtn: LinearLayout = view.findViewById(R.id.home_navbar_explore_btn)
 
+//        TODO : Need to implement intent - pageTitle
+
         homeBtn.setOnClickListener {v ->
             goTo(MainActivity::class.java, v)
         }

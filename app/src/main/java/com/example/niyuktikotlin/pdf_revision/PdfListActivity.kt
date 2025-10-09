@@ -32,6 +32,6 @@ import com.example.niyuktikotlin.util.CourseFileAdapter
         )
 
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = CourseFileAdapter(courseList, PdfListActivity::class.java)
+//        recyclerView.adapter = CourseFileAdapter(courseList, PdfListActivity::class.java)
     }
 }

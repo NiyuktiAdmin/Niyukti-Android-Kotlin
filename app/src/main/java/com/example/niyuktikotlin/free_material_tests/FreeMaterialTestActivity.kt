@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.niyuktikotlin.R
+import com.example.niyuktikotlin.course_resources.CourseResourcesActivity
 import com.example.niyuktikotlin.models.CourseFolder
 import com.example.niyuktikotlin.models.StudyMaterial
 import com.example.niyuktikotlin.pdf_revision.PdfListActivity
@@ -49,6 +50,6 @@ class FreeMaterialTestActivity : AppCompatActivity() {
         )
 
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = CourseFileAdapter(courseList, PdfListActivity::class.java)
+        recyclerView.adapter = CourseFileAdapter(courseList, CourseResourcesActivity::class.java, "@undone", false)
     }
 }

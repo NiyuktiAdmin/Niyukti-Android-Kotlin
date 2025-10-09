@@ -6,9 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.niyuktikotlin.R
+import com.example.niyuktikotlin.course_resources.CourseResourcesActivity
+import com.example.niyuktikotlin.models.CourseFolder
+import com.example.niyuktikotlin.util.CourseFileAdapter
 
 class MockTestSubListActivity : AppCompatActivity() {
-    private lateinit var adapter: MockTestSubListAdapter
+    private lateinit var adapter: CourseFileAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var backBtn: ImageView
 
@@ -27,8 +30,16 @@ class MockTestSubListActivity : AppCompatActivity() {
     private fun setItemsRv() {
         val recentlyAddedLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerView.layoutManager = recentlyAddedLayoutManager
-
-        adapter = MockTestSubListAdapter()
+        val list = listOf(
+            CourseFolder("test1", "this is test 1", "id"),
+            CourseFolder("test1", "this is test 1", "id")
+        )
+        adapter = CourseFileAdapter(
+            list,
+            CourseResourcesActivity::class.java,
+            "@undone",
+            false
+        )
         recyclerView.adapter = adapter
     }
 }

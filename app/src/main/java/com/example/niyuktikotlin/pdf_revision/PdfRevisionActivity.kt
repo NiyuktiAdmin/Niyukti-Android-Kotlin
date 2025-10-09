@@ -6,10 +6,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.niyuktikotlin.R
-import com.example.niyuktikotlin.home_page.HomePageConstableAdapter
-import com.example.niyuktikotlin.models.CourseFolder
 import com.example.niyuktikotlin.models.StudyMaterial
-import com.example.niyuktikotlin.util.CourseFileAdapter
 import com.example.niyuktikotlin.util.StudyMaterialAdapter
 
 class PdfRevisionActivity : AppCompatActivity() {

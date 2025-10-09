@@ -14,9 +14,13 @@ import com.example.niyuktikotlin.mock_test_list.MockTestSubListActivity
 import com.example.niyuktikotlin.models.CourseModel
 
 class CourseBuyAdapter(
-    private val courseList: List<CourseModel>
+    private val courseList: List<CourseModel>,
+    private val targetPage: Class<*>,
+    private val targetTitle: String
 ) : RecyclerView.Adapter<CourseBuyAdapter.ViewHolder>() {
-
+    companion object {
+        const val ITEM_NAME = "__ITEM_NAME__"
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.card_course_component, parent, false)
@@ -33,15 +37,20 @@ class CourseBuyAdapter(
         holder.cardDiscount.text = "${course.discountPercent}% OFF"
 
         holder.mainBtn.setOnClickListener { v ->
-            val intent = Intent(v.context, MockTestSubListActivity::class.java)
+            val intent = Intent(v.context, targetPage)
+            intent.putExtra("pageItem", course)
+            if (targetTitle == ITEM_NAME) {
+                intent.putExtra("pageTitle", course.title)
+            } else {
+                intent.putExtra("pageTitle", targetTitle)
+            }
             v.context.startActivity(intent)
         }
     }
 
-    override fun getItemCount(): Int = courseList.size // Use list size
+    override fun getItemCount(): Int = courseList.size
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        // ... (init block remains the same)
         var cardImage: ImageView
         var cardTitle: TextView
         var cardAmt: TextView

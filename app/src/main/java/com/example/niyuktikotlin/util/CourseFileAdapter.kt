@@ -13,10 +13,12 @@ import com.example.niyuktikotlin.models.CourseFolder
 
 class CourseFileAdapter (
     private val courseList: List<CourseFolder>,
-    private val destinationActivity: Class<*>
+    private val destinationActivity: Class<*>,
+    private val baseTitle: String,
+    private val attachedTitle: Boolean
 ) : RecyclerView.Adapter<CourseFileAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CourseFileAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.card_item_folder, parent, false)
         return ViewHolder(view)
@@ -31,6 +33,12 @@ class CourseFileAdapter (
         holder.body.setOnClickListener { v ->
             val intent = Intent(v.context, destinationActivity)
             intent.putExtra("courseId", courseItem.id)
+            val nextTitle = if (attachedTitle) {
+                baseTitle + " › " + courseItem.title
+            } else {
+                baseTitle
+            }
+            intent.putExtra("pageTitle", nextTitle)
             v.context.startActivity(intent)
         }
     }
