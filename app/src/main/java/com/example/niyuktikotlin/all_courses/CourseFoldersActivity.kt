@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.all_courses
 
+import BaseActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -23,7 +24,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class CourseFoldersActivity : AppCompatActivity() {
+class CourseFoldersActivity : BaseActivity() {
     // Existing variables
     private lateinit var recyclerView : RecyclerView
     private lateinit var backBtn : ImageView

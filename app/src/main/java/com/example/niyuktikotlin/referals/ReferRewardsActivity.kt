@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.referals
 
+import BaseActivity
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.niyuktikotlin.R
 
-class ReferRewardsActivity : AppCompatActivity() {
+class ReferRewardsActivity : BaseActivity() {
 
     private lateinit var rvRecentReferrals: RecyclerView
     private lateinit var adapter: RecentReferalsAdapter

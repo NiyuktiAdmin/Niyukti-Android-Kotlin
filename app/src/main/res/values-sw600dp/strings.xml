@@ -1,7 +1,7 @@
 <resources>
     <!-- =============== APP CONFIGURATION =============== -->
     <string name="app_name">Niyukti</string>
-    <string name="screen_orientation">portrait</string>
+    <string name="screen_orientation">unspecified</string>
 
     <!-- =============== APPWRITE IDs =============== -->
     <string name="APPWRITE_PROJECT_ID">68511ac1000c3bac6acc</string>

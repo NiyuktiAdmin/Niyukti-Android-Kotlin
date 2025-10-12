@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.test_conducting
 
+import BaseActivity
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Color
@@ -26,7 +27,7 @@ import java.util.LinkedHashMap
 import java.util.Locale
 import java.util.concurrent.TimeUnit
 
-class TestMainActivity : AppCompatActivity(), QuestionAdapter.OnOptionSelectedListener, SubjectAdapter.OnSubjectSelectedListener, TestSubmitDialogFragment.OnSubmitClickListener {
+class TestMainActivity : BaseActivity(), QuestionAdapter.OnOptionSelectedListener, SubjectAdapter.OnSubjectSelectedListener, TestSubmitDialogFragment.OnSubmitClickListener {
     private lateinit var totalTimeRemaining: TextView
     private lateinit var currQuesNo: TextView
     private lateinit var currPassedTime: TextView

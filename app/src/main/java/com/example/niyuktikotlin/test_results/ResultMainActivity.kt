@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.test_results
 
+import BaseActivity
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.graphics.drawable.LayerDrawable
@@ -12,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.niyuktikotlin.R
 import com.example.niyuktikotlin.home_page.HomeActivity
 
-class ResultMainActivity : AppCompatActivity() {
+class ResultMainActivity : BaseActivity() {
     private lateinit var leaderBoardRv: RecyclerView
     private lateinit var scoreCircleBackground: FrameLayout
     private lateinit var homeBtn: ImageView

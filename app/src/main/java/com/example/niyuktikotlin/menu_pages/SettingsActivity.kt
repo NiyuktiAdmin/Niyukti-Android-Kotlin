@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.menu_pages
 
+import BaseActivity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
@@ -16,7 +17,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class SettingsActivity : AppCompatActivity() {
+class SettingsActivity : BaseActivity() {
 
     private lateinit var client: Client
     private lateinit var account: Account

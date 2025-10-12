@@ -29,8 +29,8 @@
     <color name="about_accent_3">#2E5532</color>
 
     <!-- ========== HOME PAGE ============ -->
-    <color name="home_card">#F68726</color>
-
+    <color name="home_card">#E4822C</color>
+<!-- F68726 -->
     <!-- ========== LOGIN PAGE ============ -->
     <color name="login_gold">#F6B000</color>
     <color name="login_inactive">#E1B446</color>

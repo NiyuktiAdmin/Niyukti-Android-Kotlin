@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.mock_test_list
 
+import BaseActivity
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -10,7 +11,7 @@ import com.example.niyuktikotlin.util.CourseBuyTagAdapter
 import com.example.niyuktikotlin.util.CourseBuyAdapter
 import com.example.niyuktikotlin.models.CourseModel
 
-class MockTestListActivity : AppCompatActivity(), CourseBuyTagAdapter.OnTagSelectedListener {
+class MockTestListActivity : BaseActivity(), CourseBuyTagAdapter.OnTagSelectedListener {
 
     private lateinit var tagsRv: RecyclerView
     private lateinit var itemsRv: RecyclerView

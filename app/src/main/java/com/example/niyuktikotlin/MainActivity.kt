@@ -1,6 +1,6 @@
 package com.example.niyuktikotlin
 
-import androidx.appcompat.app.AppCompatActivity
+import BaseActivity
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,7 +13,7 @@ import com.example.niyuktikotlin.models.HallOfFameModel
 import com.example.niyuktikotlin.models.StudentReviewModel
 import com.example.niyuktikotlin.util.SimpleImageAdapter
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     lateinit var navigationMenuBtn: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {

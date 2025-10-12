@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.all_courses
 
+import BaseActivity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -22,7 +23,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class CourseFolderItemsActivity : AppCompatActivity() {
+class CourseFolderItemsActivity : BaseActivity() {
     private lateinit var recyclerView : RecyclerView
     private lateinit var backBtn : ImageView
     private lateinit var testBtn: TextView

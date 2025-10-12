@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.pdf_revision
 
+import BaseActivity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -9,7 +10,7 @@ import com.example.niyuktikotlin.R
 import com.example.niyuktikotlin.models.StudyMaterial
 import com.example.niyuktikotlin.util.StudyMaterialAdapter
 
-class PdfRevisionActivity : AppCompatActivity() {
+class PdfRevisionActivity : BaseActivity() {
     lateinit var recyclerView : RecyclerView
     lateinit var backBtn : ImageView
     override fun onCreate(savedInstanceState: Bundle?) {

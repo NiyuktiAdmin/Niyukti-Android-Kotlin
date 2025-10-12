@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.login
 
+import BaseActivity
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
@@ -20,7 +21,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class LoginOtpActivity : AppCompatActivity() {
+class LoginOtpActivity : BaseActivity() {
 
     private lateinit var loginBtn: CardView
     private lateinit var phoneEditText: EditText

@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.test_info
 
+import BaseActivity
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -10,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.niyuktikotlin.R
 import com.example.niyuktikotlin.test_conducting.TestMainActivity
 
-class TestConfigurationActivity : AppCompatActivity() {
+class TestConfigurationActivity : BaseActivity() {
 
     private lateinit var startTestBtn: TextView
 

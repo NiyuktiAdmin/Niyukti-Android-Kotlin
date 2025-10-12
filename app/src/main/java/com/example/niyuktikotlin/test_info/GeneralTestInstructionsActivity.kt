@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.test_info
 
+import BaseActivity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.example.niyuktikotlin.R
 
-class GeneralTestInstructionsActivity : AppCompatActivity() {
+class GeneralTestInstructionsActivity : BaseActivity() {
     var startTestBtn: TextView? = null
     private lateinit var backBtn: ImageView
 

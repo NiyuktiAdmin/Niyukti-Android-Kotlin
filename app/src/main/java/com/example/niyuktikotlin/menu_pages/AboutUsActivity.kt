@@ -1,11 +1,12 @@
 package com.example.niyuktikotlin.menu_pages
 
+import BaseActivity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import com.example.niyuktikotlin.R
 
-class AboutUsActivity : AppCompatActivity() {
+class AboutUsActivity : BaseActivity() {
     lateinit var backBtn: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

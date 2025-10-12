@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.all_courses
 
+import BaseActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
@@ -22,7 +23,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class AllCoursesListActivity : AppCompatActivity(), CourseBuyTagAdapter.OnTagSelectedListener {
+class AllCoursesListActivity : BaseActivity(), CourseBuyTagAdapter.OnTagSelectedListener {
 
     private lateinit var coursesRv: RecyclerView
     private lateinit var tagsRv: RecyclerView

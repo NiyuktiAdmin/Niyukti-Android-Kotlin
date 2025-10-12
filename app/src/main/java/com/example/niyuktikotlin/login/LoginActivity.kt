@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.login
 
+import BaseActivity
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
@@ -23,7 +24,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class LoginActivity : AppCompatActivity() {
+class LoginActivity : BaseActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var googleBtn: CardView

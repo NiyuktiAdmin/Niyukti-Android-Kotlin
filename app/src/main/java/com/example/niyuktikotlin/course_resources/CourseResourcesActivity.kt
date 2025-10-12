@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.course_resources
 
+import BaseActivity
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.niyuktikotlin.R
 
-class CourseResourcesActivity : AppCompatActivity() {
+class CourseResourcesActivity : BaseActivity() {
 
     private lateinit var resourcesRv: RecyclerView
     private lateinit var testsRv: RecyclerView

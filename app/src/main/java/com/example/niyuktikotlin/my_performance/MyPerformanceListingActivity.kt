@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.my_performance
 
+import BaseActivity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -10,7 +11,7 @@ import com.example.niyuktikotlin.R
 import com.example.niyuktikotlin.models.CourseFolder
 import com.example.niyuktikotlin.util.CourseFileAdapter
 
-class MyPerformanceListingActivity : AppCompatActivity() {
+class MyPerformanceListingActivity : BaseActivity() {
     lateinit var recyclerView : RecyclerView
     lateinit var backBtn : ImageView
     lateinit var pageTitle: TextView

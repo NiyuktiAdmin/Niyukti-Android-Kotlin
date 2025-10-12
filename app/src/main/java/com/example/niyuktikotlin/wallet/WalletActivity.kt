@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.wallet
 
+import BaseActivity
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.niyuktikotlin.R
 
-class WalletActivity : AppCompatActivity() {
+class WalletActivity : BaseActivity() {
     private lateinit var transactionRv: RecyclerView
     private lateinit var adapter: WalletTransactionAdapter
     lateinit var backBtn: ImageView

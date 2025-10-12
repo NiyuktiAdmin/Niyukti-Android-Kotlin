@@ -90,8 +90,8 @@
                         android:layout_width="12dp"
                         android:layout_height="12dp"
                         android:contentDescription="Star"
-                        app:tint="@color/home_card"
-                        app:srcCompat="@drawable/baseline_star_outline_24" />
+                        app:srcCompat="@drawable/baseline_star_outline_24"
+                        app:tint="@color/login_gold" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -107,8 +107,8 @@
                         android:layout_height="12dp"
                         android:layout_marginStart="12dp"
                         android:contentDescription="Clock"
-                        app:tint="@color/home_card"
-                        app:srcCompat="@drawable/baseline_alarm_24" />
+                        app:srcCompat="@drawable/baseline_alarm_24"
+                        app:tint="@color/login_gold" />
 
                     <TextView
                         android:layout_width="wrap_content"

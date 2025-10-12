@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.mock_test_list
 
+import BaseActivity
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
@@ -10,7 +11,7 @@ import com.example.niyuktikotlin.course_resources.CourseResourcesActivity
 import com.example.niyuktikotlin.models.CourseFolder
 import com.example.niyuktikotlin.util.CourseFileAdapter
 
-class MockTestSubListActivity : AppCompatActivity() {
+class MockTestSubListActivity : BaseActivity() {
     private lateinit var adapter: CourseFileAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var backBtn: ImageView

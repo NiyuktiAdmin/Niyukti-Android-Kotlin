@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.login
 
+import BaseActivity
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
@@ -21,7 +22,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class OtpVerifyActivity : AppCompatActivity() {
+class OtpVerifyActivity : BaseActivity() {
     private lateinit var verifyButton: CardView
     private lateinit var contactTextView: TextView
     private lateinit var otpEditText: EditText

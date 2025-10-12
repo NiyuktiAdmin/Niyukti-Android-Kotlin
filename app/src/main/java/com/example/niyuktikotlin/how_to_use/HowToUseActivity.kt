@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.how_to_use
 
+import BaseActivity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -11,7 +12,7 @@ import com.example.niyuktikotlin.models.CourseFolder
 import com.example.niyuktikotlin.pdf_revision.PdfListActivity
 import com.example.niyuktikotlin.util.CourseFileAdapter
 
-class HowToUseActivity : AppCompatActivity() {
+class HowToUseActivity : BaseActivity() {
     lateinit var recyclerView : RecyclerView
     lateinit var backBtn : ImageView
 

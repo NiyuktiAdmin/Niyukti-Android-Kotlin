@@ -37,23 +37,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="2dp"
                 android:orientation="horizontal"
                 android:gravity="center_vertical">
 
                 <EditText
+                    android:id="@+id/fragment_cp_refer_code_tv"
                     android:layout_width="0dp"
                     android:layout_height="48dp"
                     android:layout_weight="1"
+                    android:background="@drawable/bgrd_border"
+                    android:hint="Enter the Code"
+                    android:inputType="textCapCharacters"
+                    android:maxLength="10"
                     android:paddingHorizontal="16dp"
                     android:paddingVertical="8dp"
-                    android:hint="Enter the Code"
-                    android:textSize="16sp"
                     android:textColor="@color/text_black"
                     android:textColorHint="@color/text_dim"
-                    android:background="@drawable/bgrd_border"
-                    android:maxLength="10"
-                    android:inputType="textCapCharacters"/>
+                    android:textSize="16sp" />
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
@@ -63,13 +64,14 @@
                     app:cardElevation="0dp">
 
                     <TextView
+                        android:id="@+id/fragment_cp_refer_code_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/gradient_blue_bgrd"
                         android:clickable="true"
                         android:gravity="center"
-                        android:paddingVertical="12dp"
                         android:paddingHorizontal="18dp"
+                        android:paddingVertical="12dp"
                         android:text="Apply"
                         android:textColor="@color/pure_white"
                         android:textStyle="bold" />
@@ -77,9 +79,18 @@
             </LinearLayout>
 
             <TextView
+                android:id="@+id/fragment_cp_ref_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
+                android:layout_marginStart="8dp"
+                android:text="User Not Found"
+                android:textColor="@color/text_dim"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="12dp"
                 android:text="Have a Coupon Code?"
                 android:textColor="@color/text_black"
                 android:textSize="18sp"
@@ -249,7 +260,7 @@
             </LinearLayout>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/proceed_to_checkout_btn"
+                android:id="@+id/fragment_cp_proceed_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:clickable="true"

@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.menu_pages
 
+import BaseActivity
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ValueAnimator
@@ -16,7 +17,7 @@ import android.widget.Spinner
 import androidx.appcompat.app.AppCompatActivity
 import com.example.niyuktikotlin.R
 
-class ProfileActivity : AppCompatActivity() {
+class ProfileActivity : BaseActivity() {
 
     // Using lateinit var for views that are initialized in initViews()
     private lateinit var basicInfoContent: LinearLayout

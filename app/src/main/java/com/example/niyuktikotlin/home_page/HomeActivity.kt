@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.home_page
 
+import BaseActivity
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
@@ -37,7 +38,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class HomeActivity : AppCompatActivity() {
+class HomeActivity : BaseActivity() {
     // ... (Existing variable declarations)
     private lateinit var welcomeName: TextView
     private lateinit var referralCode: TextView
@@ -160,10 +161,8 @@ class HomeActivity : AppCompatActivity() {
     private suspend fun fetchAllCoursesForDisplay(userId: String?): List<CourseModel> {
         val queries = mutableListOf<String>()
 
-        // Add a limit for efficiency (e.g., fetch up to 100 courses)
         queries.add(Query.limit(100))
 
-        // Optionally, sort by $createdAt to ensure "recent" courses are included first
         queries.add(Query.orderDesc("\$createdAt"))
 
         val response = databases.listDocuments(

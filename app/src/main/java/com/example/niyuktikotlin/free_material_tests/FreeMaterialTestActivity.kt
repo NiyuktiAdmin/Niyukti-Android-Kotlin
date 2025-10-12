@@ -1,5 +1,6 @@
 package com.example.niyuktikotlin.free_material_tests
 
+import BaseActivity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -13,7 +14,7 @@ import com.example.niyuktikotlin.models.StudyMaterial
 import com.example.niyuktikotlin.pdf_revision.PdfListActivity
 import com.example.niyuktikotlin.util.CourseFileAdapter
 
-class FreeMaterialTestActivity : AppCompatActivity() {
+class FreeMaterialTestActivity : BaseActivity() {
     lateinit var recyclerView : RecyclerView
     lateinit var backBtn : ImageView
 
