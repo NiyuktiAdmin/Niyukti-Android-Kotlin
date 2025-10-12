@@ -134,7 +134,7 @@ class TestMainActivity : AppCompatActivity(), QuestionAdapter.OnOptionSelectedLi
         totalTimeRemaining = findViewById(R.id.test_main_total_time_left)
         currQuesNo = findViewById(R.id.test_main_ques_no)
         currPassedTime = findViewById(R.id.test_main_curr_passed_time)
-        nextButtonText = findViewById(R.id.tvNext) // Initialize nextButtonText
+        nextButtonText = findViewById(R.id.tvNext)
 
         nextQuesBtn = findViewById(R.id.test_main_next_q_btn)
         prevQuesBtn = findViewById(R.id.test_main_prev_q_btn)

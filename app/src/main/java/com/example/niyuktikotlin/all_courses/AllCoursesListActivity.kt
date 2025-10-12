@@ -11,6 +11,7 @@ import com.example.niyuktikotlin.R
 import com.example.niyuktikotlin.models.CourseModel
 import com.example.niyuktikotlin.util.CourseBuyAdapter
 import com.example.niyuktikotlin.util.CourseBuyTagAdapter
+import com.example.niyuktikotlin.util.ResourceUnavailableAdapter
 import io.appwrite.Client
 import io.appwrite.Query
 import io.appwrite.exceptions.AppwriteException
@@ -185,6 +186,19 @@ class AllCoursesListActivity : AppCompatActivity(), CourseBuyTagAdapter.OnTagSel
     }
 
     private fun updateCoursesRv(list: List<CourseModel>) {
+        if (list.isEmpty()) {
+            val unavailableAdapter = ResourceUnavailableAdapter(
+                pageText = "No courses match the selected filter, or no courses are available.",
+                // TODO : implement this
+//                btnText = if (uniqueTags.isNotEmpty() && tagsAdapter.selectedTag != ALL_TAG) "Show All Courses" else null,
+//                onButtonClick = if (uniqueTags.isNotEmpty() && tagsAdapter.selectedTag != ALL_TAG) {
+//                    { onTagSelected(ALL_TAG) }
+//                } else null
+            )
+            coursesRv.adapter = unavailableAdapter
+            return
+        }
+
         coursesAdapter = CourseBuyAdapter(list, CourseFoldersActivity::class.java, CourseBuyAdapter.ITEM_NAME)
         coursesRv.adapter = coursesAdapter
     }

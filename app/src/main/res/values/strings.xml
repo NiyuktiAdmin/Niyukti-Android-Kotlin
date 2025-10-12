@@ -28,6 +28,7 @@
 
     <!-- =============== DROP DOWN =============== -->
     <string name="category_prompt">Select Category</string>
+    <string name="val_select">Select</string>
 
     <string-array name="category_options">
         <item>Select</item>
@@ -40,9 +41,18 @@
         <item>PH</item>
     </string-array>
 
+    <string-array name="my_performance_options">
+        <item>Highest Score</item>
+        <item>Lowest Score</item>
+        <item>Recent First</item>
+        <item>Accuracy</item>
+    </string-array>
+
     <string-array name="comparison_options">
         <item>Marks</item>
         <item>Accuracy</item>
         <item>Time Taken</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

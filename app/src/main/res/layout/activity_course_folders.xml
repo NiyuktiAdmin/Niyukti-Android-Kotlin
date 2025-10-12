@@ -51,10 +51,11 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="wrap_content"
-        android:layout_height="220dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/sample_books_bundle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:src="@drawable/constable_banner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
@@ -64,7 +65,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/fragment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
@@ -85,6 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@drawable/bgrd_bottom_border"
             android:clickable="true"
             android:padding="4dp"
             android:text="Topics"
@@ -119,5 +121,25 @@
             android:textSize="14sp"
             android:textStyle="bold" />
     </LinearLayout>
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.example.niyuktikotlin.banner.BuyBannerFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/navbar_fragment_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout="@layout/fragment_buy_banner" />
+
+    <fragment
+        android:id="@+id/navbar_fragment_container"
+        android:name="com.example.niyuktikotlin.navbar_fragment.NavbarFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout="@layout/fragment_navbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

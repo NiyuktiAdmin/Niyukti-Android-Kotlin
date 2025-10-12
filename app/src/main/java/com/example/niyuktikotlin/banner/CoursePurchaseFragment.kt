@@ -1,4 +1,4 @@
-package com.example.niyuktikotlin.test_conducting
+package com.example.niyuktikotlin.banner
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
@@ -9,26 +9,23 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.view.WindowManager
-import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.annotation.Nullable
 import androidx.fragment.app.DialogFragment
 import com.example.niyuktikotlin.R
 
-class TestInfoDialogFragment : DialogFragment() {
+
+class CoursePurchaseFragment : DialogFragment() {
 
     override fun onCreate(@Nullable savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(STYLE_NO_FRAME, R.style.FullScreenDialogStyle)
+        setStyle(DialogFragment.STYLE_NO_FRAME, R.style.FullScreenDialogStyle)
     }
 
     override fun onCreateView(@NonNull inflater: LayoutInflater, @Nullable container: ViewGroup?, @Nullable savedInstanceState: Bundle?): View? {
-        val view = inflater.inflate(R.layout.dialogue_test_info, container, false)
+        val view = inflater.inflate(R.layout.fragment_course_purchase, container, false)
 
-        val closeButton: TextView = view.findViewById(R.id.dialog_test_info_close_btn)
-        closeButton.setOnClickListener {
-            dismiss()
-        }
+//        Your code here ---
 
         dialog?.window?.let { window ->
             window.requestFeature(Window.FEATURE_NO_TITLE)
@@ -43,4 +40,5 @@ class TestInfoDialogFragment : DialogFragment() {
         }
         return view
     }
+
 }

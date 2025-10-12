@@ -13,6 +13,7 @@ import com.example.niyuktikotlin.models.CourseFolder
 import com.example.niyuktikotlin.models.CourseModel
 import com.example.niyuktikotlin.pdf_revision.PdfListActivity
 import com.example.niyuktikotlin.util.CourseFileAdapter
+import com.example.niyuktikotlin.util.ResourceUnavailableAdapter
 import io.appwrite.Client
 import io.appwrite.Query
 import io.appwrite.exceptions.AppwriteException
@@ -66,28 +67,48 @@ class CourseFoldersActivity : AppCompatActivity() {
 
         materialsBtn.setOnClickListener {
             fetchSyllabusData()
+            updateSelectedTab(materialsBtn)
         }
+
         testBtn.setOnClickListener {
-            // Highlight test tab
-            // TODO: Implement fetchTestData()
-            Toast.makeText(this, "Test data fetching not implemented yet.", Toast.LENGTH_SHORT).show()
+            updateRecyclerView(emptyList())
+            updateSelectedTab(testBtn)
         }
+
         planBtn.setOnClickListener {
-            // Highlight plan tab
-            // TODO: Implement fetchPlansData()
-            Toast.makeText(this, "Plan data fetching not implemented yet.", Toast.LENGTH_SHORT).show()
+            updateRecyclerView(emptyList())
+            updateSelectedTab(planBtn)
         }
 
         val titleFromIntent = intent.getStringExtra("pageTitle")
         pageTitle.text = titleFromIntent ?: "Courses"
     }
 
+    private fun updateSelectedTab(selectedBtn: TextView) {
+        materialsBtn.background = null
+        testBtn.background = null
+        planBtn.background = null
+
+        selectedBtn.setBackgroundResource(R.drawable.bgrd_bottom_border)
+    }
+
     private fun updateRecyclerView(list: List<CourseFolder>) {
+        if (list.isEmpty()) {
+            val unavailableAdapter = ResourceUnavailableAdapter(
+                pageText = "No syllabus items available.",
+                btnText = null
+            )
+            recyclerView.layoutManager = LinearLayoutManager(this)
+            recyclerView.adapter = unavailableAdapter
+            return
+        }
+
         val destinationActivity = CourseFolderItemsActivity::class.java
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = CourseFileAdapter(list, destinationActivity, pageTitle.text.toString(), true)
     }
+
 
     private fun fetchSyllabusData() {
         if (currentCourse.syllabusIds.isEmpty()) {

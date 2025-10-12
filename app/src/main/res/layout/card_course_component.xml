@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:maxWidth="512dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
@@ -162,8 +163,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="12dp"
-                        app:tint="@color/text_black"
-                        app:srcCompat="@drawable/baseline_share_24" />
+                        app:srcCompat="@drawable/baseline_share_24"
+                        app:tint="@color/text_black" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>

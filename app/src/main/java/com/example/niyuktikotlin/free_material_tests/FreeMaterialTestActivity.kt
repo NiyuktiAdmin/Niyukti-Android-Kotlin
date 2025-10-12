@@ -32,16 +32,34 @@ class FreeMaterialTestActivity : AppCompatActivity() {
         initialiseRv()
     }
 
-    fun initialiseBtn() {
+    private fun initialiseBtn() {
         recyclerView = findViewById(R.id.free_mt_activity_rv)
         backBtn = findViewById(R.id.free_mt_activity_back_btn)
 
         testBtn = findViewById(R.id.free_mt_activity_test_btn)
+        testBtn.setOnClickListener {
+            updateSelectedTab(testBtn)
+        }
         materialsBtn = findViewById(R.id.free_mt_activity_materials_btn)
+        materialsBtn.setOnClickListener {
+            updateSelectedTab(materialsBtn)
+        }
         planBtn = findViewById(R.id.free_mt_activity_plan_btn)
+        planBtn.setOnClickListener {
+            updateSelectedTab(planBtn)
+        }
+        updateSelectedTab(materialsBtn)
     }
 
-    fun initialiseRv() {
+    private fun updateSelectedTab(selectedBtn: TextView) {
+        materialsBtn.background = null
+        testBtn.background = null
+        planBtn.background = null
+
+        selectedBtn.setBackgroundResource(R.drawable.bgrd_bottom_border)
+    }
+
+    private fun initialiseRv() {
         val courseList = listOf(
             CourseFolder("Hindi Papers", "3 subtopics", "id1"),
             CourseFolder("Civics Papers", "5 subtopics", "id1"),
@@ -50,6 +68,6 @@ class FreeMaterialTestActivity : AppCompatActivity() {
         )
 
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = CourseFileAdapter(courseList, CourseResourcesActivity::class.java, "@undone", false)
+        recyclerView.adapter = CourseFileAdapter(courseList, CourseResourcesActivity::class.java, "Free Resources", true)
     }
 }

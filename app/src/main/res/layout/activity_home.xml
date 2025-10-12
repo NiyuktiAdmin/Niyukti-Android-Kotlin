@@ -153,243 +153,251 @@
                 tools:listitem="@layout/card_home_course_adv" />
 
             <LinearLayout
+                android:id="@+id/home_activity_cards_container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginHorizontal="10dp"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="vertical"
+                android:paddingHorizontal="10dp">
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/home_activity_all_courses"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="86dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="12dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:clickable="true"
-                    app:cardBackgroundColor="@color/home_card"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="6dp">
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                    <LinearLayout
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/home_activity_all_courses"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="12dp">
+                        android:layout_height="86dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="12dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        app:cardBackgroundColor="@color/home_card"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="6dp">
 
-                        <ImageView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="20dp"
-                            android:layout_marginBottom="4dp"
-                            app:srcCompat="@drawable/ic_all_courses"
-                            app:tint="@color/pure_black" />
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="12dp">
 
-                        <TextView
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="4dp"
+                                app:srcCompat="@drawable/ic_all_courses"
+                                app:tint="@color/pure_black" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="All Courses"
+                                android:textAlignment="center"
+                                android:textColor="@color/pure_black"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/home_activity_subject_course"
+                        android:layout_width="match_parent"
+                        android:layout_height="86dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="12dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        app:cardBackgroundColor="@color/home_card"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="All Courses"
-                            android:textAlignment="center"
-                            android:textColor="@color/pure_black"
-                            android:textStyle="bold" />
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="12dp">
 
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="4dp"
+                                app:srcCompat="@drawable/ic_subj_course"
+                                app:tint="@color/pure_black" />
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/home_activity_subject_course"
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Subject Course"
+                                android:textAlignment="center"
+                                android:textColor="@color/pure_black"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/home_activity_mock_test"
+                        android:layout_width="match_parent"
+                        android:layout_height="86dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="12dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        app:cardBackgroundColor="@color/home_card"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="6dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="12dp">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="4dp"
+                                app:srcCompat="@drawable/ic_mock_test"
+                                app:tint="@color/pure_black" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Mock Test"
+                                android:textAlignment="center"
+                                android:textColor="@color/pure_black"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="86dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="12dp"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:clickable="true"
-                    app:cardBackgroundColor="@color/home_card"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="6dp">
+                    android:gravity="center"
+                    android:orientation="horizontal">
 
-                    <LinearLayout
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/home_activity_free_material"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="12dp">
+                        android:layout_height="86dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="12dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        app:cardBackgroundColor="@color/home_card"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="6dp">
 
-                        <ImageView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="20dp"
-                            android:layout_marginBottom="4dp"
-                            app:srcCompat="@drawable/ic_subj_course"
-                            app:tint="@color/pure_black" />
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="12dp">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Subject Course"
-                            android:textAlignment="center"
-                            android:textColor="@color/pure_black"
-                            android:textStyle="bold" />
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="22dp"
+                                android:layout_marginBottom="4dp"
+                                app:srcCompat="@drawable/ic_free_material"
+                                app:tint="@color/pure_black" />
 
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Free Material"
+                                android:textAlignment="center"
+                                android:textColor="@color/pure_black"
+                                android:textStyle="bold" />
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/home_activity_mock_test"
-                    android:layout_width="match_parent"
-                    android:layout_height="86dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="12dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    app:cardBackgroundColor="@color/home_card"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="6dp">
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-                    <LinearLayout
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/home_activity_chat_bot"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="12dp">
+                        android:layout_height="86dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="12dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        app:cardBackgroundColor="@color/home_card"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="6dp">
 
-                        <ImageView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="20dp"
-                            android:layout_marginBottom="4dp"
-                            app:srcCompat="@drawable/ic_mock_test"
-                            app:tint="@color/pure_black" />
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="12dp">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Mock Test"
-                            android:textAlignment="center"
-                            android:textColor="@color/pure_black"
-                            android:textStyle="bold" />
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginBottom="4dp"
+                                app:srcCompat="@drawable/ic_bot"
+                                app:tint="@color/pure_black" />
 
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-            </LinearLayout>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Niyukti Chatbot"
+                                android:textAlignment="center"
+                                android:textColor="@color/pure_black"
+                                android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginHorizontal="10dp"
-                android:gravity="center"
-                android:orientation="horizontal">
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/home_activity_free_material"
-                    android:layout_width="match_parent"
-                    android:layout_height="86dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="12dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    app:cardBackgroundColor="@color/home_card"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="6dp">
-
-                    <LinearLayout
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/home_activity_my_performance"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="12dp">
+                        android:layout_height="86dp"
+                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginVertical="12dp"
+                        android:layout_weight="1"
+                        android:clickable="true"
+                        app:cardBackgroundColor="@color/home_card"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="6dp">
 
-                        <ImageView
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="22dp"
-                            android:layout_marginBottom="4dp"
-                            app:srcCompat="@drawable/ic_free_material"
-                            app:tint="@color/pure_black" />
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:padding="12dp">
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Free Material"
-                            android:textAlignment="center"
-                            android:textColor="@color/pure_black"
-                            android:textStyle="bold" />
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="22dp"
+                                android:layout_marginBottom="4dp"
+                                app:srcCompat="@drawable/ic_my_performance"
+                                app:tint="@color/pure_black" />
 
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxLines="2"
+                                android:text="My Performance"
+                                android:textAlignment="center"
+                                android:textColor="@color/pure_black"
+                                android:textStyle="bold" />
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/home_activity_chat_bot"
-                    android:layout_width="match_parent"
-                    android:layout_height="86dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="12dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    app:cardBackgroundColor="@color/home_card"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="6dp">
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="12dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="20dp"
-                            android:layout_marginBottom="4dp"
-                            app:srcCompat="@drawable/ic_bot"
-                            app:tint="@color/pure_black" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Niyukti Chatbot"
-                            android:textAlignment="center"
-                            android:textColor="@color/pure_black"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/home_activity_my_performance"
-                    android:layout_width="match_parent"
-                    android:layout_height="86dp"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginVertical="12dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    app:cardBackgroundColor="@color/home_card"
-                    app:cardCornerRadius="20dp"
-                    app:cardElevation="6dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="12dp">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="22dp"
-                            android:layout_marginBottom="4dp"
-                            app:srcCompat="@drawable/ic_my_performance"
-                            app:tint="@color/pure_black" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:lines="2"
-                            android:text="My Performance"
-                            android:textAlignment="center"
-                            android:textColor="@color/pure_black"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout

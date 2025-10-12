@@ -31,15 +31,13 @@ class MockTestSubListActivity : AppCompatActivity() {
         val recentlyAddedLayoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         recyclerView.layoutManager = recentlyAddedLayoutManager
         val list = listOf(
-            CourseFolder("test1", "this is test 1", "id"),
-            CourseFolder("test1", "this is test 1", "id")
+            CourseFolder("Mathematics 101", "Introduction to basic algebra and geometry concepts", "course_001"),
+            CourseFolder("Physics Fundamentals", "Covers Newtonian mechanics and basic thermodynamics", "course_002"),
+            CourseFolder("World History", "Explores major historical events from ancient to modern times", "course_003"),
+            CourseFolder("Computer Science Basics", "Introduction to programming, algorithms, and data structures", "course_004"),
+            CourseFolder("Creative Writing", "Develop storytelling and narrative writing techniques", "course_005")
         )
-        adapter = CourseFileAdapter(
-            list,
-            CourseResourcesActivity::class.java,
-            "@undone",
-            false
-        )
+        adapter = CourseFileAdapter(list, CourseResourcesActivity::class.java, "Mock Test", false)
         recyclerView.adapter = adapter
     }
 }

@@ -6,7 +6,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import android.util.DisplayMetrics // Import required for screen metrics
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -34,9 +36,9 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import org.json.JSONObject
 
 class HomeActivity : AppCompatActivity() {
+    // ... (Existing variable declarations)
     private lateinit var welcomeName: TextView
     private lateinit var referralCode: TextView
     private lateinit var referCodeCopy: ImageView
@@ -69,6 +71,9 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var databases: Databases
     private val scope = CoroutineScope(Dispatchers.IO)
 
+    private lateinit var cardsContainer: LinearLayout
+    private val WIDE_SCREEN_THRESHOLD_DP = 1024
+
     private val autoScrollRunnable = object : Runnable {
         override fun run() {
 //            TODO : need to change the number of items in offer rv here
@@ -91,7 +96,7 @@ class HomeActivity : AppCompatActivity() {
         databases = Databases(client)
 
         initialiseVariables()
-
+        setContainerOrientationByWidth()
         setOfferRv()
 
         fetchUserName { userId ->
@@ -107,6 +112,22 @@ class HomeActivity : AppCompatActivity() {
             val clip = ClipData.newPlainText("Referral Code", referralCode.text.toString())
             clipboard.setPrimaryClip(clip)
             Toast.makeText(this, "Copied to clipboard", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun setContainerOrientationByWidth() {
+        val displayMetrics = DisplayMetrics()
+        windowManager.defaultDisplay.getMetrics(displayMetrics)
+
+        val screenWidthPx = displayMetrics.widthPixels
+
+        val density = displayMetrics.density
+        val screenWidthDp = screenWidthPx / density
+
+        if (screenWidthDp > WIDE_SCREEN_THRESHOLD_DP) {
+            cardsContainer.orientation = LinearLayout.HORIZONTAL
+        } else {
+            cardsContainer.orientation = LinearLayout.VERTICAL
         }
     }
 
@@ -287,6 +308,8 @@ class HomeActivity : AppCompatActivity() {
         freeMaterial = findViewById(R.id.home_activity_free_material)
         niyuktiChatBotCard = findViewById(R.id.home_activity_chat_bot)
         myPerformanceCard = findViewById(R.id.home_activity_my_performance)
+
+        cardsContainer = findViewById(R.id.home_activity_cards_container)
 
         navigationMenuBtn = findViewById(R.id.home_activity_menu_btn)
         setNavigationMenuBtn()

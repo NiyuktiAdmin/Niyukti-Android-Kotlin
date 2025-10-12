@@ -38,14 +38,28 @@ class MockTestListActivity : AppCompatActivity(), CourseBuyTagAdapter.OnTagSelec
     private fun loadCourseData() {
 
         val ieltsCourses = listOf(
-            CourseModel("id", "title", "desc", 100, 60, true, 40, R.drawable.course4, "helo")
+            CourseModel("1", "IELTS Foundation", "Basic IELTS preparation course", 100, 60, true, 40, R.drawable.course4, "Learn IELTS basics"),
+            CourseModel("2", "IELTS Advanced", "Advanced techniques for IELTS", 150, 90, false, 0, R.drawable.course4, "Master IELTS strategies"),
+            CourseModel("3", "IELTS Practice Tests", "10 full-length mock tests", 120, 80, true, 50, R.drawable.course4, "Improve your band score")
         )
 
-        val toeflCourses = ieltsCourses
+        val toeflCourses = listOf(
+            CourseModel("4", "TOEFL Starter", "Introduction to TOEFL test pattern", 90, 50, true, 40, R.drawable.course4, "Start your TOEFL journey"),
+            CourseModel("5", "TOEFL Vocabulary Booster", "Learn 500 essential TOEFL words", 110, 60, false, 0, R.drawable.course4, "Enhance vocabulary"),
+            CourseModel("6", "TOEFL Mock Series", "5 full mock tests with analysis", 130, 85, true, 35, R.drawable.course4, "Test your skills")
+        )
 
-        val upscCourses = ieltsCourses
+        val upscCourses = listOf(
+            CourseModel("7", "UPSC Prelims", "Comprehensive course for Prelims", 200, 120, true, 50, R.drawable.course4, "Prepare for Prelims"),
+            CourseModel("8", "UPSC Mains", "Answer writing practice & strategy", 250, 150, false, 0, R.drawable.course4, "Boost your Mains score"),
+            CourseModel("9", "UPSC Test Series", "15 full-length tests", 300, 180, true, 40, R.drawable.course4, "Simulate real exam experience")
+        )
 
-        val jeeCourses = ieltsCourses
+        val jeeCourses = listOf(
+            CourseModel("10", "JEE Physics", "Master mechanics and electromagnetism", 180, 100, true, 45, R.drawable.course4, "Crack JEE Physics"),
+            CourseModel("11", "JEE Chemistry", "Organic, inorganic & physical chemistry", 170, 95, false, 0, R.drawable.course4, "Score high in Chemistry"),
+            CourseModel("12", "JEE Mathematics", "Advanced problem-solving course", 190, 110, true, 30, R.drawable.course4, "Sharpen your math skills")
+        )
 
         courseCategories = linkedMapOf(
             "All" to ieltsCourses + toeflCourses + upscCourses + jeeCourses,

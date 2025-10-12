@@ -2,6 +2,7 @@ package com.example.niyuktikotlin.all_courses
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -11,6 +12,7 @@ import com.example.niyuktikotlin.R
 import com.example.niyuktikotlin.course_resources.CourseResourcesActivity
 import com.example.niyuktikotlin.models.CourseFolder
 import com.example.niyuktikotlin.util.CourseFileAdapter
+import com.example.niyuktikotlin.util.ResourceUnavailableAdapter
 import io.appwrite.Client
 import io.appwrite.Query
 import io.appwrite.exceptions.AppwriteException
@@ -60,21 +62,32 @@ class CourseFolderItemsActivity : AppCompatActivity() {
         syllabusItemId = intent.getStringExtra("courseId") ?: ""
         pageTitle.text = intent.getStringExtra("pageTitle") ?: "Course Material"
 
+        Log.d("CourseFolderItemsActivity", "syllabusItemId: $syllabusItemId")
 
         materialsBtn.setOnClickListener {
             fetchAndDisplayTopics()
+            updateSelectedTab(materialsBtn)
         }
         testBtn.setOnClickListener {
-            Toast.makeText(this, "Test data fetching not implemented yet.", Toast.LENGTH_SHORT).show()
+            updateRecyclerView(emptyList())
+            updateSelectedTab(testBtn)
         }
         planBtn.setOnClickListener {
-            Toast.makeText(this, "Plan data fetching not implemented yet.", Toast.LENGTH_SHORT).show()
+            updateRecyclerView(emptyList())
+            updateSelectedTab(planBtn)
         }
+    }
+
+    private fun updateSelectedTab(selectedBtn: TextView) {
+        materialsBtn.background = null
+        testBtn.background = null
+        planBtn.background = null
+
+        selectedBtn.setBackgroundResource(R.drawable.bgrd_bottom_border)
     }
 
     private fun fetchAndDisplayTopics() {
         if (syllabusItemId.isEmpty()) {
-            Toast.makeText(this, "Error: No syllabus item ID provided.", Toast.LENGTH_LONG).show()
             updateRecyclerView(emptyList())
             return
         }
@@ -91,7 +104,6 @@ class CourseFolderItemsActivity : AppCompatActivity() {
 
                 if (topicIds.isEmpty()) {
                     withContext(Dispatchers.Main) {
-                        Toast.makeText(this@CourseFolderItemsActivity, "No topics available for this syllabus item.", Toast.LENGTH_SHORT).show()
                         updateRecyclerView(emptyList())
                     }
                     return@launch
@@ -131,17 +143,29 @@ class CourseFolderItemsActivity : AppCompatActivity() {
                 e.printStackTrace()
                 withContext(Dispatchers.Main) {
                     Toast.makeText(this@CourseFolderItemsActivity, "Failed to load topics: ${e.message}", Toast.LENGTH_LONG).show()
+                    updateRecyclerView(emptyList())
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
                 withContext(Dispatchers.Main) {
                     Toast.makeText(this@CourseFolderItemsActivity, "An unexpected error occurred: ${e.message}", Toast.LENGTH_LONG).show()
+                    updateRecyclerView(emptyList())
                 }
             }
         }
     }
 
     private fun updateRecyclerView(list: List<CourseFolder>) {
+        if (list.isEmpty()) {
+            val unavailableAdapter = ResourceUnavailableAdapter(
+                pageText = "No topics available.",
+                btnText = null
+            )
+            recyclerView.layoutManager = LinearLayoutManager(this)
+            recyclerView.adapter = unavailableAdapter
+            return
+        }
+
         val destinationActivity = CourseResourcesActivity::class.java
 
         recyclerView.layoutManager = LinearLayoutManager(this)
