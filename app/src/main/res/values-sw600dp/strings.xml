@@ -2,6 +2,7 @@
     <!-- =============== APP CONFIGURATION =============== -->
     <string name="app_name">Niyukti</string>
     <string name="screen_orientation">unspecified</string>
+    <string name="RAZ_KEY">rzp_test_RRQZEAiPMgeovH</string>
 
     <!-- =============== APPWRITE IDs =============== -->
     <string name="APPWRITE_PROJECT_ID">68511ac1000c3bac6acc</string>

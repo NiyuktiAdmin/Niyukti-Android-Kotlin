@@ -3,6 +3,7 @@ package com.example.niyuktikotlin.course_resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.niyuktikotlin.R
 
@@ -14,10 +15,17 @@ class CourseResourceAdapter : RecyclerView.Adapter<CourseResourceAdapter.ViewHol
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {}
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+//        implement pdf reading here
+    }
     override fun getItemCount(): Int {
         return 2
     }
 
-    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        var readBtn : TextView
+        init {
+            readBtn = itemView.findViewById(R.id.study_material_btn_text)
+        }
+    }
 }

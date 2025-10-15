@@ -150,19 +150,21 @@
                         <androidx.cardview.widget.CardView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:clickable="true"
                             app:cardCornerRadius="8dp"
                             app:cardElevation="0dp">
 
                             <TextView
+                                android:id="@+id/fragment_cp_coupon_apply_btn"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@drawable/gradient_blue_bgrd"
                                 android:clickable="true"
                                 android:gravity="center"
                                 android:paddingVertical="6dp"
-                                android:textSize="12sp"
                                 android:text="Apply"
                                 android:textColor="@color/pure_white"
+                                android:textSize="12sp"
                                 android:textStyle="bold" />
                         </androidx.cardview.widget.CardView>
                     </LinearLayout>
@@ -202,7 +204,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="₹449"
+                    android:text="₹2000"
                     android:textColor="@color/text_dim"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -222,9 +224,10 @@
                     android:textSize="16sp" />
 
                 <TextView
+                    android:id="@+id/fragment_cp_discount_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="-₹100"
+                    android:text="-₹0"
                     android:textColor="@color/pure_red"
                     android:textSize="16sp" />
             </LinearLayout>
@@ -251,9 +254,10 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/fragment_cp_final_amt_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="₹349"
+                    android:text="₹2000"
                     android:textColor="@color/text_black"
                     android:textSize="20sp"
                     android:textStyle="bold" />

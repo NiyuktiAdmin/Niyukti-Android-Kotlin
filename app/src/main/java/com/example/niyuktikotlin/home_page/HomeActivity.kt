@@ -39,7 +39,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class HomeActivity : BaseActivity() {
-    // ... (Existing variable declarations)
     private lateinit var welcomeName: TextView
     private lateinit var referralCode: TextView
     private lateinit var referCodeCopy: ImageView

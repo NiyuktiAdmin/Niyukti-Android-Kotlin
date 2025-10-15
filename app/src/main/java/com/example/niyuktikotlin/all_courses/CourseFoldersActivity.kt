@@ -9,12 +9,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.niyuktikotlin.PaymentHandlerActivity
 import com.example.niyuktikotlin.R
 import com.example.niyuktikotlin.models.CourseFolder
 import com.example.niyuktikotlin.models.CourseModel
 import com.example.niyuktikotlin.pdf_revision.PdfListActivity
 import com.example.niyuktikotlin.util.CourseFileAdapter
 import com.example.niyuktikotlin.util.ResourceUnavailableAdapter
+import com.razorpay.PaymentResultListener
 import io.appwrite.Client
 import io.appwrite.Query
 import io.appwrite.exceptions.AppwriteException
@@ -24,7 +26,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class CourseFoldersActivity : BaseActivity() {
+class CourseFoldersActivity : PaymentHandlerActivity() {
     // Existing variables
     private lateinit var recyclerView : RecyclerView
     private lateinit var backBtn : ImageView
@@ -52,6 +54,14 @@ class CourseFoldersActivity : BaseActivity() {
         backBtn.setOnClickListener { finish() }
 
         fetchSyllabusData()
+    }
+
+    override fun handlePaymentSuccess(razorpayPaymentID: String?) {
+//        TODO("Not yet implemented")
+    }
+
+    override fun handlePaymentError(code: Int, response: String?) {
+//        TODO("Not yet implemented")
     }
 
     private fun initialise() {
@@ -109,7 +119,6 @@ class CourseFoldersActivity : BaseActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = CourseFileAdapter(list, destinationActivity, pageTitle.text.toString(), true)
     }
-
 
     private fun fetchSyllabusData() {
         if (currentCourse.syllabusIds.isEmpty()) {

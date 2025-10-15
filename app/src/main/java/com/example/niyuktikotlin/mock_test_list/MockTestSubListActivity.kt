@@ -6,12 +6,13 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.niyuktikotlin.PaymentHandlerActivity
 import com.example.niyuktikotlin.R
 import com.example.niyuktikotlin.course_resources.CourseResourcesActivity
 import com.example.niyuktikotlin.models.CourseFolder
 import com.example.niyuktikotlin.util.CourseFileAdapter
 
-class MockTestSubListActivity : BaseActivity() {
+class MockTestSubListActivity : PaymentHandlerActivity() {
     private lateinit var adapter: CourseFileAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var backBtn: ImageView
@@ -26,6 +27,14 @@ class MockTestSubListActivity : BaseActivity() {
             finish()
         }
         setItemsRv()
+    }
+
+    override fun handlePaymentSuccess(razorpayPaymentID: String?) {
+//        TODO("Not yet implemented")
+    }
+
+    override fun handlePaymentError(code: Int, response: String?) {
+//        TODO("Not yet implemented")
     }
 
     private fun setItemsRv() {
